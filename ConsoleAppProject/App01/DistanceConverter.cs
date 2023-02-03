@@ -19,7 +19,9 @@ namespace ConsoleAppProject.App01
         /// </summary>
         public void Run()
         {
-
+            InputMiles();
+            CalculateFeet();
+            OutputFeet();
         }
         /// <summary>
         /// Ask the user to enter the amount of miles they want to calculate
