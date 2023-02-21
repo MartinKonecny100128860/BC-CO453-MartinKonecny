@@ -3,10 +3,10 @@
 namespace ConsoleAppProject.App01
 {
     /// <summary>
-    /// This app will convert miles into feet.
+    /// This app will convert miles into feet, feet to miles and miles to meters.
     /// </summary>
     /// <author>
-    /// Martin Konecny Ver. 1.1
+    /// Martin Konecny Ver. 2.1
     /// </author>
     public class DistanceConverter
     {
@@ -21,62 +21,49 @@ namespace ConsoleAppProject.App01
         private double meters;
 
         /// <summary>
-        /// this method will input the distanced measured in miles
+        /// this method will input the distanced measured from miles to feet
         /// </summary>
-
         public void MilesToFeet()
         {
-            OutputHeading();
-            InputMiles();
+            OutputHeading("Converting Miles to Feet");
+
+            miles = InputDistance("Please enter the number of miles > ");
+
             CalculateFeet();
-            OutputFeet();
+
+            OutputDistance(miles, nameof(miles), feet, nameof(feet));
 
         }
 
         public void FeetToMiles()
         {
-            OutputHeading();
-            InputFeet();
+            OutputHeading("Converting Feet to Miles");
+            feet = InputDistance("Please enter the number of feet > ");
             CalculateMiles();
-            OutputMiles();
+            OutputDistance(feet, nameof(feet), miles, nameof(miles));
 
         }
 
         public void MilesToMeters()
         {
-            OutputHeading();
-            InputMiles();
+            OutputHeading("Converting Miles to Meters");
+            miles = InputDistance("Please enter the number of miles > ");
             CalculateMeters();
-            OutputMeters();
+            OutputDistance(miles, nameof(miles), meters, nameof(meters));
 
         }
 
         /// <summary>
         /// Ask the user to enter the amount of miles they want to calculate
         /// </summary>
-        private void InputMiles()
+        private double InputDistance(string prompt)
         {
-            Console.Write("Please enter the number of miles you want to convert ");
+            Console.Write(prompt);
             string value = Console.ReadLine();
-            miles = Convert.ToDouble(value);
+            return Convert.ToDouble(value);
 
         }
 
-        private void InputFeet()
-        {
-            Console.Write("Please enter the number of feet you want to convert ");
-            string value = Console.ReadLine();
-            feet = Convert.ToDouble(value);
-
-        }
-
-        private void InputMeters()
-        {
-            Console.Write("Please enter the number of meters you want to convert ");
-            string value = Console.ReadLine();
-            meters = Convert.ToDouble(value);
-
-        }
         /// <summary>
         /// Converts feet to miles (multiply)
         /// </summary>
@@ -102,38 +89,28 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        /// Outputs feet to miles
+        /// Outputs feet to miles use of interpolation (dollar sign)
         /// </summary>
-        private void OutputFeet()
+        private void OutputDistance(
+            double fromDistance, string fromUnit,
+            double toDistance, string toUnit)
         {
-            Console.WriteLine(miles + " miles is " + feet + " feet! ");
-        }
-
-        /// <summary>
-        /// Outputs miles to feet
-        /// </summary>
-        private void OutputMiles()
-        {
-            Console.WriteLine(feet + " feet is " + miles + " miles! ");
-        }
-
-        /// <summary>
-        /// Outputs miles to meters
-        /// </summary>
-        private void OutputMeters()
-        {
-            Console.WriteLine(miles + " miles is " + meters + " meters! ");
+            Console.WriteLine($" {fromDistance}  {fromUnit}" +
+                $" is {toDistance} {toUnit}!");
         }
 
         /// <summary>
         /// This is the heading which greets the user, summarizes the app and shows the author
         /// </summary>
-        private void OutputHeading()
+        private void OutputHeading(String prompt)
         {
             Console.WriteLine("\n-------------------------------------");
-            Console.WriteLine("       Convert Miles to Feet         ");
+            Console.WriteLine("           Distance Converter        ");
             Console.WriteLine("            By Martin Konecny        ");
             Console.WriteLine("-------------------------------------\n");
+
+            Console.WriteLine(prompt);
+            Console.WriteLine();
         }
     }
 }
