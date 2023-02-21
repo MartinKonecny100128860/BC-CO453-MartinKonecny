@@ -23,13 +23,6 @@ namespace ConsoleAppProject.App01
         /// <summary>
         /// this method will input the distanced measured in miles
         /// </summary>
-        public void Run()
-        {
-            OutputHeading();
-            InputMiles();
-            CalculateFeet();
-            OutputFeet();
-        }
 
         public void MilesToFeet()
         {
