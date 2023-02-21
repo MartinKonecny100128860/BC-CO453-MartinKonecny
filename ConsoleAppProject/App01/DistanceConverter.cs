@@ -12,16 +12,16 @@ namespace ConsoleAppProject.App01
     {
         public const int FEET_IN_MILES = 5280;
 
-        public const double METERS_IN_MILES = 1609.34;
+        public const double METRES_IN_MILES = 1609.34;
 
         private double miles;
 
         private double feet;
 
-        private double meters;
+        private double metres;
 
         /// <summary>
-        /// 
+        /// this method will input the distanced measured in miles
         /// </summary>
         public void Run()
         {
@@ -65,7 +65,7 @@ namespace ConsoleAppProject.App01
         {
             Console.Write("Please enter the number of miles you want to convert ");
             string value = Console.ReadLine();
-            meters = Convert.ToDouble(value);
+            metres = Convert.ToDouble(value);
 
         }
 
@@ -105,7 +105,7 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void CalculateMeters()
         {
-            meters = miles * METERS_IN_MILES;
+            metres = miles * METRES_IN_MILES;
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void OutputMeters()
         {
-            Console.WriteLine(miles + " miles is " + meters + " meters! ");
+            Console.WriteLine(miles + " miles is " + metres + " meters! ");
         }
 
         /// <summary>
