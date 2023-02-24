@@ -8,7 +8,7 @@ namespace ConsoleAppProject.App01
     /// meters (toUnit) and it will also ask the user for the number of feet and convert it into miles.
     /// </summary>
     /// <author>
-    /// Martin Konecny Ver. 3.1
+    /// Martin Konecny Ver. 4.1
     /// </author>
     public class DistanceConverter
     {
