@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ConsoleAppProject.App01;
+using System;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Xml.Serialization;
 
 namespace ConsoleAppProject.App01
 {
@@ -44,8 +46,8 @@ namespace ConsoleAppProject.App01
         public void ConvertDistance()
         {
             OutputHeading();
-            fromUnit = SelectUnit(" Please select from the distance unit > ");
-            toUnit = SelectUnit(" Please select from the distance unit > ");
+            fromUnit = SelectUnit(" Please select the distance unit you want to convert from > ");
+            toUnit = SelectUnit(" Please select the distance unit you want to convert to > ");
 
             Console.WriteLine($" Converting {fromUnit} to {toUnit}");
 
@@ -62,11 +64,11 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void CalculateDistance()
         {
-            if(fromUnit == MILES && toUnit == FEET)
+            if (fromUnit == MILES && toUnit == FEET)
             {
                 toDistance = fromDistance * FEET_IN_MILES;
             }
-            else if(fromUnit == FEET && toUnit == MILES)
+            else if (fromUnit == FEET && toUnit == MILES)
             {
                 toDistance = fromDistance / FEET_IN_MILES;
             }
@@ -93,8 +95,8 @@ namespace ConsoleAppProject.App01
         {
             string choice = DisplayChoices(prompt);
 
-            string unit =  ExecuteChoice(choice);
-            Console.WriteLine($"\n You have chosen {unit}");
+            string unit = ExecuteChoice(choice);
+            Console.WriteLine($"\n You have selected {unit}");
             return unit;
         }
 
@@ -148,15 +150,35 @@ namespace ConsoleAppProject.App01
                 $" is {toDistance} {toUnit}!\n");
         }
 
-        /// <summary>
-        /// This is the heading which greets the user, summarizes the app and shows the author
-        /// </summary>
-        private void OutputHeading()
+        string unit = "INVALID CHOICE";
+
+        if (choice =="1")
+            {
+                unit = FEET;
+            }
+       else if (choice == "2")
         {
-            Console.WriteLine("\n--------------------------------------------------");
+                unit = METRES;
+        }
+        else if (choice == "3")
+        {
+                 unit = MILES;
+        }
+
+Console.WriteLine($" You have selected {unit}");
+Console.WriteLine();
+
+return Unit;
+
+/// <summary>
+/// This is the heading which greets the user, summarizes the app and shows the author
+/// </summary>
+private void OutputHeading()
+        {
+            Console.WriteLine("\n -------------------------------------------------");
             Console.WriteLine("                 Distance Converter                 ");
             Console.WriteLine("                 By Martin Konecny                  ");
-            Console.WriteLine("--------------------------------------------------\n");
+            Console.WriteLine(" -------------------------------------------------\n");
         }
     }
 }
