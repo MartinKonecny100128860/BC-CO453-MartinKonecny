@@ -1,6 +1,4 @@
-﻿@page
-@model IndexModel
-@{
+﻿@{
     ViewData["Title"] = "MK Home page";
 }
 
@@ -13,10 +11,10 @@
 <section>
     <ol class=" list-group"> 
         <li class=" list-group-item">
-            <a> Distance Converter </a>
+            <a asp-controller="Home" asp-action="DistanceConverter">App01: Distance Converter</a>
         </li>
         <li class=" list-group-item">
-            <a> BMI Calculator </a>
+            <a asp-controller="Home" asp-action="BMICalculator">App02: BMI Calculator</a>
         </li>
 
     </ol>
