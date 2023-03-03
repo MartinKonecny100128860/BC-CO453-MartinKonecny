@@ -150,26 +150,6 @@ namespace ConsoleAppProject.App01
                 $" is {toDistance} {toUnit}!\n");
         }
 
-        string unit = "INVALID CHOICE";
-
-        if (choice =="1")
-            {
-                unit = FEET;
-            }
-       else if (choice == "2")
-        {
-                unit = METRES;
-        }
-        else if (choice == "3")
-        {
-                 unit = MILES;
-        }
-
-Console.WriteLine($" You have selected {unit}");
-Console.WriteLine();
-
-return Unit;
-
 /// <summary>
 /// This is the heading which greets the user, summarizes the app and shows the author
 /// </summary>
