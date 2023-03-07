@@ -17,6 +17,16 @@ namespace WebApps.Controllers
             return View();
         }
 
+        public IActionResult BMICalculator()
+        {
+            return View();
+        }
+
+        public IActionResult StudentMarks()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

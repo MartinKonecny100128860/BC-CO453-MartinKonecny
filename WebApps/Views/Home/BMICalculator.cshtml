@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "BMI Calculator";
+}
+
+<header>
+    <h1> BMI Calculator </h1>
+    <h2> by Martin Konecny </h2>
+    <p>
+        This app will use your body weight and height to calculate 
+        a BMI Index which can be used to classify your health risks
+    </p>
+</header>
+
+<section>
+    <form method="post">
+
+        <h2> Height </h2>
+        <p> Please input your current height in whole numbers using
+            metric or imperial units
+        </p>
+        <p>
+
+            <input type="number" placeholder="Feet" />
+            <input type="number" placeholder="Inches" />
+        </p>
+        <p>
+            <input type="number" placeholder="Centimeters" />
+        </p>
+
+        <h2> Weight </h2>
+        <p> Please input your current weight in whole numbers using
+            metric or imperial units
+        </p>
+        <p>
+
+            <input type="number" placeholder="Stones" />
+            <input type="number" placeholder="Pounds" />
+        </p>
+        <p>
+            <input type="number" placeholder="Kilograms" />
+        </p>
+
+        <p>
+            <button class="btn-success" type="submit">Calculate</button>
+        </p>
+
+    </form>
+</section>
