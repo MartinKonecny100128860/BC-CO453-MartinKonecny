@@ -1,10 +1,67 @@
-﻿
+﻿@model ConsoleAppProject.App01.DistanceConverter
 @{
     ViewData["Title"] = "MK DistanceConverter";
 }
+
 <header>
-    <h1>Distance Converter</h1>
+    <h1>App01: Distance Converter</h1>
+    <h2>by Martin Konecny</h2>
+    <p>
+        This app will convert a distance entered in one unit into 
+        the equalivent distance measured in another unit.
+    </p>
 
 </header>
+
+<form method="post">
+
+    <h2>Convert from:</h2>
+
+    <p>
+        <label>From Unit: </label>
+        <select asp-for="@Model.FromUnit">
+            <option>@DistanceConverter.MILES</option>
+            <option>@DistanceConverter.METRES</option>
+            <option>@DistanceConverter.FEET</option>
+        </select>
+    </p>
+    <p>
+        @if (Model.FromDistance == 0)
+        {
+            <input type="text" asp-for="@Model.FromDistance" value=""
+                   placeholder="From Distance" required />
+        }
+        else
+        {
+            <input type="text" asp-for="@Model.FromDistance"
+               placeholder="From Distance" required />
+        }
+    </p>
+        <h2>Convert to</h2>
+
+    <p>
+        <label>To Unit: </label>
+        <select asp-for="@Model.ToUnit">
+            <option>@DistanceConverter.MILES</option>
+            <option>@DistanceConverter.METRES</option>
+            <option>@DistanceConverter.FEET</option>
+        </select>
+    </p>
+    <p>
+        @if (Model.ToDistance == 0)
+        {
+                <input type="text" asp-for="@Model.ToDistance" value=""
+                   placeholder="From Distance" readonly />
+        }
+        else
+        {
+                <input type="text" asp-for="@Model.ToDistance"
+               placeholder="From Distance" required />
+        }
+    </p>
+    <p>
+        <button class="btn btn-success" type="submit">Calculate</button>
+    </p>
+</form>
 
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebApps.Models;
+using ConsoleAppProject.App01;
 
 namespace WebApps.Controllers
 {
@@ -11,17 +12,22 @@ namespace WebApps.Controllers
         {
             return View();
         }
-
+        [HttpGet]
         public IActionResult DistanceConverter()
         {
             return View();
         }
-
+        [HttpPost]
+        public IActionResult DistanceConverter()
+        {
+            return View();
+        }
+        [HttpGet]
         public IActionResult BMICalculator()
         {
             return View();
         }
-
+        [HttpGet]
         public IActionResult StudentMarks()
         {
             return View();
