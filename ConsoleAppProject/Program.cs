@@ -1,4 +1,5 @@
 ﻿using ConsoleAppProject.App01;
+using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
 using ConsoleAppProject.Helpers;
 using System;
@@ -15,6 +16,10 @@ namespace ConsoleAppProject
     /// </summary>
     public static class Program
     {
+        private static DistanceConverter converter = new DistanceConverter();
+        private static BMI BmiCalculator = new BMI();
+
+
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
@@ -26,9 +31,20 @@ namespace ConsoleAppProject
             Console.WriteLine();
             Console.Beep();
 
-            DistanceConverter converter = new DistanceConverter();
-            converter.ConvertDistance();
+            string[] myChoices = { "Distance Converter", "BMI Calculator",
+                                 "Student Marks", "Social Network",};
 
+            int option = ConsoleHelper.SelectChoice(myChoices);
+
+            if (option == 1)
+            {
+                converter.ConvertDistance();
+            }
+            else if (option == 2)
+            {
+                BmiCalculator.CalculateIndex();
+            }
+                     
         }
     }
 }
