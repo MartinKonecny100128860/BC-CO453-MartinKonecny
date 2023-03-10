@@ -28,11 +28,11 @@ namespace ConsoleAppProject.App01
         public const string METERS = "Meters";
         public const string MILES = "Miles";
 
-        private double fromDistance;
-        private double toDistance;
+        public double fromDistance;
+        public double toDistance;
 
-        private string fromUnit;
-        private string toUnit;
+        public string fromUnit;
+        public string toUnit;
 
         public DistanceConverter()
         {
@@ -62,7 +62,7 @@ namespace ConsoleAppProject.App01
         /// <summary>
         /// Calculations are happening here for all the units. 
         /// </summary>
-        private void CalculateDistance()
+        public void CalculateDistance()
         {
             if (fromUnit == MILES && toUnit == FEET)
             {

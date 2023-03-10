@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ConsoleAppProject.App01;
+using ConsoleAppProject.App02;
+using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebApps.Models;
-using ConsoleAppProject.App01;
+
 
 namespace WebApps.Controllers
 {
@@ -12,21 +14,53 @@ namespace WebApps.Controllers
         {
             return View();
         }
-        [HttpGet]
-        public IActionResult DistanceConverter()
+
+        //[HttpGet]
+        public IActionResult DistanceConverter(DistanceConverter converter)
         {
-            return View();
+            if (converter.fromDistance > 0)
+            {
+                converter.CalculateDistance();
+            }
+            return View(converter);
         }
-        [HttpPost]
-        public IActionResult DistanceConverter()
-        {
-            return View();
-        }
+
+
         [HttpGet]
         public IActionResult BMICalculator()
         {
             return View();
         }
+
+
+        [HttpPost]
+        public IActionResult BMICalculator(BMI bmi)
+        {
+            if (bmi.Centimetres > 140)
+            {
+                bmi.CalculateMetricBMI();
+            }
+            else if (bmi.Feet > 4 && bmi.Stones > 6)
+            {
+                bmi.CalculateImperialBMI();
+            }
+            else
+            {
+                ViewBag.Error = "These values are too small for an adult!";
+                return View();
+            }
+            double Index = bmi.Index;
+
+            return RedirectToAction("HealthMessage", new { Index });
+        }
+
+        public IActionResult HealthMessage(double Index)
+        {
+            return View(Index);
+        }
+
+
+
         [HttpGet]
         public IActionResult StudentMarks()
         {
