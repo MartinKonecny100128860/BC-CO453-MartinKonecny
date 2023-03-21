@@ -21,7 +21,8 @@
 
     <p>
         <label>From Unit: </label>
-        <select asp-for="@Model.FromUnit">
+        <select asp-for="FromUnit" required 
+                asp>
             <option>@DistanceConverter.MILES</option>
             <option>@DistanceConverter.METERS</option>
             <option>@DistanceConverter.FEET</option>
@@ -58,7 +59,8 @@
         else
         {
                 <input type="text" asp-for="@Model.ToDistance"
-               placeholder="From Distance" required />
+                value="@Model.ToDistance.ToString("0.00")"
+                placeholder="To Distance" readonly />
         }
     </p>
     <p>
