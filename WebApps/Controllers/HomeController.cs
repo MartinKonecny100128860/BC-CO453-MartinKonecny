@@ -51,10 +51,10 @@ namespace WebApps.Controllers
             }
             double Index = bmi.Index;
 
-            return RedirectToAction("HealthMessage", new { Index });
+            return RedirectToAction("GetHealthMessage", new { Index });
         }
 
-        public IActionResult HealthMessage(double Index)
+        public IActionResult GetHealthMessage (double Index)
         {
             return View(Index);
         }

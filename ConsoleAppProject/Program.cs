@@ -18,6 +18,7 @@ namespace ConsoleAppProject
     {
         private static DistanceConverter converter = new DistanceConverter();
         private static BMI BmiCalculator = new BMI();
+        private static StudentGrades Grades = new StudentGrades();
 
 
         public static void Main(string[] args)
@@ -44,7 +45,11 @@ namespace ConsoleAppProject
             {
                 BmiCalculator.CalculateIndex();
             }
-                     
+            else if (option == 3)
+            {
+                Grades.OutputMenu();
+            }
+
         }
     }
 }
