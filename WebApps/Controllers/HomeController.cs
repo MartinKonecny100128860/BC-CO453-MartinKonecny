@@ -18,7 +18,7 @@ namespace WebApps.Controllers
         //[HttpGet]
         public IActionResult DistanceConverter(DistanceConverter converter)
         {
-            if (converter.fromDistance > 0)
+            if (converter.FromDistance > 0)
             {
                 converter.CalculateDistance();
             }

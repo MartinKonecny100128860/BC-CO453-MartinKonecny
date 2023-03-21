@@ -1,5 +1,5 @@
 ﻿@model ConsoleAppProject.App01.DistanceConverter
-@uses ConsoleAppProject.App01
+@using ConsoleAppProject.App01
 @{
     ViewData["Title"] = "MK DistanceConverter";
 }
@@ -23,7 +23,7 @@
         <label>From Unit: </label>
         <select asp-for="@Model.FromUnit">
             <option>@DistanceConverter.MILES</option>
-            <option>@DistanceConverter.METRES</option>
+            <option>@DistanceConverter.METERS</option>
             <option>@DistanceConverter.FEET</option>
         </select>
     </p>
@@ -45,7 +45,7 @@
         <label>To Unit: </label>
         <select asp-for="@Model.ToUnit">
             <option>@DistanceConverter.MILES</option>
-            <option>@DistanceConverter.METRES</option>
+            <option>@DistanceConverter.METERS</option>
             <option>@DistanceConverter.FEET</option>
         </select>
     </p>

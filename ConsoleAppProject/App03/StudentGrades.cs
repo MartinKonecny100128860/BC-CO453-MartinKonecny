@@ -11,6 +11,17 @@ namespace ConsoleAppProject.App03
     /// </summary>
     public class StudentGrades
     {
+        // constants which ae the grade boundaries
+
+        public const int LowestMark = 0;
+        public const int LowestGradeD = 40;
+        public const int LowestGradeC= 50;
+        public const int LowestGradeB = 60;
+        public const int LowestGradeA = 70;
+        public const int HighestMark = 100;
+
+        //properties
+
 
         public string[] Students { get; set; }
         public int[] Marks { get; set; }
@@ -18,6 +29,8 @@ namespace ConsoleAppProject.App03
         public double[] Mean { get; set; }
         public int[] Minimm { get; set; }
         public int[] Maximum { get; set; }
+
+        // attrributes
 
         /// <summary>
         /// Constructor
@@ -58,7 +71,11 @@ namespace ConsoleAppProject.App03
         /// </summary>
         public Grades ConvertToGrade(int mark)
         {
-            throw new NotImplementedException();
+            if (mark >= 0 && mark < LowestGradeD)
+            {
+                return Grades.F;
+            }
+            else return Grades.D;
         }
         /// <summary>
         /// Calculate and display the minimum, maximum
