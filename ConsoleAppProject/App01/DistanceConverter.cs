@@ -102,19 +102,23 @@ namespace ConsoleAppProject.App01
 
         private static string ExecuteChoice(string choice)
         {
-            if (choice.Equals("1"))
-            {
-                return FEET;
-            }
-            else if (choice == "2")
-            {
-                return METERS;
-            }
-            else if (choice.Equals("3"))
-            {
-                return MILES;
+            DistanceUnits unit;
 
+            switch (choice)
+            {
+                case "1": unit = DistanceUnits.Feet; break;
+                case "2": unit = DistanceUnits.Metres; break;
+                case "3": unit = DistanceUnits.Miles; break;
+
+                default: unit = DistanceUnits.NoUnit; break;
             }
+
+            if (unit == DistanceUnits.NoUnit)
+            {
+                Console.WriteLine(" \n Wrong selection! Try again!");
+                Console.WriteLine(" \n You MUST select number between 1 to 3!");
+            }
+            Console.WriteLine($"\n You have chosen {unit}");
             return null;
         }
 
@@ -150,10 +154,10 @@ namespace ConsoleAppProject.App01
                 $" is {ToDistance} {ToUnit}!\n");
         }
 
-/// <summary>
-/// This is the heading which greets the user, summarizes the app and shows the author
-/// </summary>
-private void OutputHeading()
+        /// <summary>
+        /// This is the heading which greets the user, summarizes the app and shows the author
+        /// </summary>
+        private void OutputHeading()
         {
             Console.WriteLine("\n -------------------------------------------------");
             Console.WriteLine("                 Distance Converter                 ");
