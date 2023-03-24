@@ -121,15 +121,15 @@ namespace ConsoleAppProject.Helpers
         /// </summary>
         public static void OutputHeading(string heading)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Magenta;
 
             Console.WriteLine("\n ---------------------------------");
             Console.WriteLine($"    {heading}          ");
-            Console.WriteLine("     by Derek Peacock           ");
+            Console.WriteLine("     by Martin Konecny           ");
             Console.WriteLine(" ---------------------------------" +
                 "\n");
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Magenta;
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace ConsoleAppProject.Helpers
         /// </summary>
         public static void OutputTitle(string title)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Magenta;
 
             Console.WriteLine($"\n {title}");
             Console.Write(" ");

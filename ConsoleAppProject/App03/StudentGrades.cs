@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using ConsoleAppProject.Helpers;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace ConsoleAppProject.App03
 {
@@ -143,20 +144,23 @@ namespace ConsoleAppProject.App03
         /// Calculate and display the minimum, maximum
         /// and mean mark for each student
         /// </summary>
+
         ///public void CalculateStats()
         //{
-          //  double total = 0;
-            //MinimumMark = HighestMark;
-            //MaximumMark = LowestMark;
+            //double total = 0;
+            //MinMark = HighestMark;
+            //MaxMark = LowestMark;
 
-  //          foreach (int mark in Marks)
-    //        {
-      //          total += mark;
-        //        if (mark > MaximumMark) MaximumMark = mark;
-          //      if (mark < MinimumMark) MinimumMark = mark;
+            //foreach (int mark in Marks)
+            //{
+                //total += mark;
+                //if (mark > MaxMark) MaxMark = mark;
+                //if (mark < MinMark) MinMark = mark;
             //}
-        //}
 
+            //Mean = total / Marks.Length;
+        //}
+        /// </summary>
 
         /// <summary>
         /// This method calculates the grade profile

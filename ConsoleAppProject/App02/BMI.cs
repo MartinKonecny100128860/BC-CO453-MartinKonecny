@@ -1,5 +1,6 @@
 ﻿using ConsoleAppProject.Helpers;
 using System;
+using System.Drawing;
 using System.Text;
 
 namespace ConsoleAppProject.App02
@@ -54,7 +55,7 @@ namespace ConsoleAppProject.App02
 
         public void CalculateIndex()
         {
-            ConsoleHelper.OutputHeading("Body Mass Index Calculator");
+            ConsoleHelper.OutputHeading(" Body Mass Index Calculator");
 
             UnitSystems unitSystem = SelectUnits();
 
@@ -89,6 +90,8 @@ namespace ConsoleAppProject.App02
         {
             Inches += Feet * InchesInFeet;
             Pounds += Stones * PoundsInStones;
+
+            Index = (double)Pounds * 703 / (Inches * Inches);
         }
 
 
@@ -108,14 +111,14 @@ namespace ConsoleAppProject.App02
 
         private void InputImperialDetails()
         {
-            Console.WriteLine("Enter your height to the nearest feet and inches");
+            Console.WriteLine(" Enter your height to the nearest feet and inches");
             Console.WriteLine();
 
             Feet = (int)ConsoleHelper.InputNumber("\n Enter your height in feet > ");
             Inches = (int)ConsoleHelper.InputNumber(" Enter your height in inches > ");
 
             Console.WriteLine();
-            Console.WriteLine("Enter your weight to the nearest stones and pounds");
+            Console.WriteLine(" Enter your weight to the nearest stones and pounds");
             Console.WriteLine();
 
             Stones = (int)ConsoleHelper.InputNumber(" Enter your weight in stones > ");
@@ -135,37 +138,37 @@ namespace ConsoleAppProject.App02
         {
             StringBuilder message = new StringBuilder("\n");
 
-            Console.WriteLine($"Index = {Index}");
+            Console.WriteLine($" Index = {Index}");
 
             if (Index < Underweight)
             {
                 message.Append($" Your BMI is {Index:0.00}, " +
-                           $"You are underweight! ");
+                           $" You are underweight! ");
             }
             else if (Index <= NormalRange)
             {
                 message.Append($" Your BMI is {Index:0.00}, " +
-                            $"You are in the normal range! ");
+                            $" You are in the normal range! ");
             }
             else if (Index <= Overweight)
             {
                 message.Append($" Your BMI is {Index:0.00}, " +
-                            $"You are overweight! ");
+                            $" You are overweight! ");
             }
             else if (Index <= ObeseLevel1)
             {
                 message.Append($" Your BMI is {Index:0.00}, " +
-                            $"You are obese class I! ");
+                            $" You are obese class I! ");
             }
             else if (Index <= ObeseLevel2)
             {
                 message.Append($" Your BMI is {Index:0.00}, " +
-                            $"You are obese class II! ");
+                            $" You are obese class II! ");
             }
             else if (Index >= ObeseLevel3)
             {
                 message.Append($" Your BMI is {Index:0.00}, " +
-                            $"You are obese class III! ");
+                            $" You are obese class III! ");
             }
 
             return message.ToString();
@@ -178,7 +181,7 @@ namespace ConsoleAppProject.App02
             message.Append(" If you are black, Asian, or other minority");
             message.Append(" ethic groups, you have a higher risk");
             message.Append("\n");
-            message.Append("\t Adults 23.0 or more are at increased risk");
+            message.Append("\n Adults 23.0 or more are at increased risk");
 
             return message.ToString();
         }
