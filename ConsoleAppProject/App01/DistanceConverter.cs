@@ -33,7 +33,10 @@ namespace ConsoleAppProject.App01
 
         public string FromUnit;
         public string ToUnit;
-
+        /// <summary>
+        /// A constructor of the DistanceConverter class, it sets the default
+        /// conversion to miles and feet.
+        /// </summary>
         public DistanceConverter()
         {
             FromUnit = MILES;
@@ -41,7 +44,8 @@ namespace ConsoleAppProject.App01
         }
 
         /// <summary>
-        /// this method will input the distanced measured from miles to feet
+        /// this method will input the distanced measured from miles to feet. It is the main
+        /// methid for this application
         /// </summary>
         public void ConvertDistance()
         {
@@ -90,38 +94,53 @@ namespace ConsoleAppProject.App01
             }
 
         }
-
+        /// <summary>
+        /// This method will prompt the user to pick a distance unit to convert 
+        /// from or convert to, It calls the DisplayChoices method to display the
+        /// available choices.
+        /// </summary>
         private string SelectUnit(string prompt)
         {
-            string choice = DisplayChoices(prompt);
+            string choice;
+            bool ErrorMessageChoice;
+
+            do
+            {
+                choice = DisplayChoices(prompt);
+                ErrorMessageChoice = this.ErrorMessageChoice(choice);
+            }
+            while (!ErrorMessageChoice);
 
             string unit = ExecuteChoice(choice);
             Console.WriteLine($"\n You have selected {unit}");
             return unit;
         }
-
+        /// <summary>
+        /// This method is being called by the SelectUnit method
+        /// it will convert users input to a unit string
+        /// </summary>
         private static string ExecuteChoice(string choice)
         {
-            DistanceUnits unit;
-
-            switch (choice)
+            if (choice.Equals("1"))
             {
-                case "1": unit = DistanceUnits.Feet; break;
-                case "2": unit = DistanceUnits.Metres; break;
-                case "3": unit = DistanceUnits.Miles; break;
-
-                default: unit = DistanceUnits.NoUnit; break;
+                return FEET;
+            }
+            else if (choice == "2")
+            {
+                return METERS;
+            }
+            else if (choice.Equals("3"))
+            {
+                return MILES;
             }
 
-            if (unit == DistanceUnits.NoUnit)
-            {
-                Console.WriteLine(" \n Wrong selection! Try again!");
-                Console.WriteLine(" \n You MUST select number between 1 to 3!");
-            }
-            Console.WriteLine($"\n You have chosen {unit}");
+
             return null;
         }
-
+        /// <summary>
+        /// this method will display the available choices for the distance units
+        /// It also prompts the user to pick one of the options
+        /// </summary>
         private static string DisplayChoices(string prompt)
         {
             Console.WriteLine();
@@ -152,6 +171,22 @@ namespace ConsoleAppProject.App01
         {
             Console.WriteLine($"\n {FromDistance}  {FromUnit}" +
                 $" is {ToDistance} {ToUnit}!\n");
+        }
+        /// <summary>
+        /// This method will check if the users choice is valid, if it isnt
+        /// an error message will be displayed and will return false
+        /// </summary>
+        private bool ErrorMessageChoice(string choice)
+        {
+            if (choice == "1" || choice == "2" || choice == "3")
+            {
+                return true;
+            }
+            else
+            {
+                Console.WriteLine(" This choice is NOT valid! Please select options 1, 2, or 3.");
+                return false;
+            }
         }
 
         /// <summary>

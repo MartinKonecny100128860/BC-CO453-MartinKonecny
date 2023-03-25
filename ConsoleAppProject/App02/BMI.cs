@@ -136,10 +136,13 @@ namespace ConsoleAppProject.App02
 
         public string GetHealthMessage()
         {
+            // Create a new StringBuilder to build the message
             StringBuilder message = new StringBuilder("\n");
 
+            // Display the user's BMI index
             Console.WriteLine($" Index = {Index}");
 
+            // Determine the user's BMI category based on their index
             if (Index < Underweight)
             {
                 message.Append($" Your BMI is {Index:0.00}, " +

@@ -29,9 +29,9 @@ namespace ConsoleAppProject.App03
         public string[] Students { get; set; }
         public int[] Marks { get; set; }
         public int[] GradeProfile { get; set; }
-        public double[] Mean { get; set; }
-        public int[] MinimumMark { get; set; }
-        public int[] MaximumMark { get; set; }
+        public double Mean { get; private set; }
+        public int Maxi { get; private set; }
+        public int Mini { get; private set; }
 
         //Associations in the class diagram
         public Grades Grades
@@ -145,22 +145,21 @@ namespace ConsoleAppProject.App03
         /// and mean mark for each student
         /// </summary>
 
-        ///public void CalculateStats()
+        //public void CalculateStats()
         //{
-            //double total = 0;
-            //MinMark = HighestMark;
-            //MaxMark = LowestMark;
+            //double total = 0.0;
+            //Mini = HighestMark;
+            //Maxi = LowestMark;
 
             //foreach (int mark in Marks)
             //{
                 //total += mark;
-                //if (mark > MaxMark) MaxMark = mark;
-                //if (mark < MinMark) MinMark = mark;
+                //if (mark > Maxi) Maxi = mark;
+                //if (mark < Mini) Mini = mark;
             //}
 
             //Mean = total / Marks.Length;
         //}
-        /// </summary>
 
         /// <summary>
         /// This method calculates the grade profile
