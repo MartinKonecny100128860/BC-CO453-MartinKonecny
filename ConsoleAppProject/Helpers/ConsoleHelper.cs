@@ -103,7 +103,7 @@ namespace ConsoleAppProject.Helpers
                 if (number < min || number > max)
                 {
                     isValid = false;
-                    Console.WriteLine($"Number must be between {min} and {max}");
+                    Console.WriteLine($" Invalid choice please select option {min} or {max}");
                 }
                 else isValid = true;
 

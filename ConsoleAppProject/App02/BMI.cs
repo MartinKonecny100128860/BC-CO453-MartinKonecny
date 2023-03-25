@@ -107,6 +107,7 @@ namespace ConsoleAppProject.App02
                 return UnitSystems.Metric;
             }
             else return UnitSystems.Imperial;
+
         }
 
         private void InputImperialDetails()
