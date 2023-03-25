@@ -52,7 +52,13 @@ namespace ConsoleAppProject.App02
 
         public double metres;
 
-
+        /// <summary>
+        /// it displays the heading using the console helper class
+        /// it prompts the user to select their prefered unit
+        /// once the user selects this method will call either 
+        /// InputMetricDetails() method or the InputImperialDetails() method
+        /// which then prompts the user to input their weight and height. 
+        /// </summary>
         public void CalculateIndex()
         {
             ConsoleHelper.OutputHeading(" Body Mass Index Calculator");
@@ -94,7 +100,10 @@ namespace ConsoleAppProject.App02
             Index = (double)Pounds * 703 / (Inches * Inches);
         }
 
-
+        /// <summary>
+        /// This method will prompt the user to selected between two different units
+        /// imperial and metric. it also returns selected UnitSystem enum
+        /// </summary>
         private UnitSystems SelectUnits()
         {
             string[] choices = {UnitSystems.Metric.ToString(),
@@ -107,9 +116,11 @@ namespace ConsoleAppProject.App02
                 return UnitSystems.Metric;
             }
             else return UnitSystems.Imperial;
-
         }
-
+        /// <summary>
+        /// This method will prompt the user to input their height in feet and inches and 
+        /// their weight in stones and pounds
+        /// </summary>
         private void InputImperialDetails()
         {
             Console.WriteLine(" Enter your height to the nearest feet and inches");
@@ -125,7 +136,10 @@ namespace ConsoleAppProject.App02
             Stones = (int)ConsoleHelper.InputNumber(" Enter your weight in stones > ");
             Pounds = (int)ConsoleHelper.InputNumber(" Enter your weight in pounds > ");
         }
-
+        /// <summary>
+        /// This method will prompt the user to input their height in centimetres and 
+        /// their weight in kilograms
+        /// </summary>
         private void InputMetricDetails()
         {
             Centimetres = (int)ConsoleHelper.InputNumber(" \n Enter your height in centimetres > ");
@@ -135,6 +149,11 @@ namespace ConsoleAppProject.App02
             Kilograms = ConsoleHelper.InputNumber(" Enter your weight in kilograms > ");
         }
 
+        /// <summary>
+        /// This method will detrmine the users BMI category which is based on the users
+        /// index it also returns a message with the users index and category
+        /// </summary>
+        /// <returns></returns>
         public string GetHealthMessage()
         {
             // Create a new StringBuilder to build the message
@@ -178,7 +197,10 @@ namespace ConsoleAppProject.App02
             return message.ToString();
 
         }
-
+        /// <summary>
+        /// This method returms a message about increased risks for all the listed groups
+        /// of people
+        /// </summary>
         public string GetBameMessage()
         {
             StringBuilder message = new StringBuilder("\n");
