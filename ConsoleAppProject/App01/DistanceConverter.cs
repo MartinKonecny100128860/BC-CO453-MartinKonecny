@@ -156,12 +156,20 @@ namespace ConsoleAppProject.App01
 
         /// <summary>
         /// Ask the user to enter the amount of miles they want to calculate
+        /// DDisplays an error message if the user enters a letter instead of a number.
         /// </summary>
         private double InputDistance(string prompt)
         {
             Console.Write(prompt);
             string value = Console.ReadLine();
-            return Convert.ToDouble(value);
+            double distance;
+            while (!double.TryParse(value, out distance))
+            {
+                Console.WriteLine("This input is inavlid! Please try again.");
+                Console.Write(prompt);
+                value = Console.ReadLine();
+            }
+            return distance;
         }
 
         /// <summary>

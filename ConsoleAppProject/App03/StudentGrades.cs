@@ -59,8 +59,15 @@ namespace ConsoleAppProject.App03
         // display menu of different options
         public void OutputMenu()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Select an option:");
+            Console.WriteLine("1. Input marks");
+            Console.WriteLine("2. Display marks");
+            Console.WriteLine("3. Display grades");
+            Console.WriteLine("4. Display statistics");
+            Console.WriteLine("5. Display grade profile");
+            Console.WriteLine("0. Quit");
         }
+
 
         /// <summary>
         /// Input a mark between 0-100 for one and every student and store
@@ -145,21 +152,21 @@ namespace ConsoleAppProject.App03
         /// and mean mark for each student
         /// </summary>
 
-        //public void CalculateStats()
-        //{
-            //double total = 0.0;
-            //Mini = HighestMark;
-            //Maxi = LowestMark;
+        public void CalculateStats()
+        {
+            double total = 0.0;
+            Mini = HighestMark;
+            Maxi = LowestMark;
 
-            //foreach (int mark in Marks)
-            //{
-                //total += mark;
-                //if (mark > Maxi) Maxi = mark;
-                //if (mark < Mini) Mini = mark;
-            //}
+            foreach (int mark in Marks)
+            {
+                total += mark;
+                if (mark > Maxi) Maxi = mark;
+                if (mark < Mini) Mini = mark;
+            }
 
-            //Mean = total / Marks.Length;
-        //}
+            Mean = total / Marks.Length;
+        }
 
         /// <summary>
         /// This method calculates the grade profile
