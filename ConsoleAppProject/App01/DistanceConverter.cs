@@ -165,7 +165,7 @@ namespace ConsoleAppProject.App01
             double distance;
             while (!double.TryParse(value, out distance))
             {
-                Console.WriteLine("This input is inavlid! Please try again.");
+                Console.WriteLine(" This input is inavlid! Please try again.");
                 Console.Write(prompt);
                 value = Console.ReadLine();
             }
