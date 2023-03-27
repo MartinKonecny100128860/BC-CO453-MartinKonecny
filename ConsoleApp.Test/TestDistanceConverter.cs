@@ -7,6 +7,48 @@ namespace ConsoleApp.Test
     public class TestDistanceConverter
     {
         [TestMethod]
+        public void TestFeetToMiles()
+        {
+            // Arrange 
+            DistanceConverter converter = new DistanceConverter();
+
+            converter.FromUnit = DistanceConverter.FEET;
+            converter.ToUnit = DistanceConverter.MILES;
+
+            converter.FromDistance = 5280;
+
+            //Act
+            converter.CalculateDistance();
+
+            double expectedDistance = 1.0;
+
+            //Assert
+            Assert.AreEqual(expectedDistance, converter.ToDistance);
+
+
+        }
+        [TestMethod]
+        public void TestFeetToMeters()
+        {
+            // Arrange 
+            DistanceConverter converter = new DistanceConverter();
+
+            converter.FromUnit = DistanceConverter.FEET;
+            converter.ToUnit = DistanceConverter.METERS;
+
+            converter.FromDistance = 3.28084;
+
+            //Act
+            converter.CalculateDistance();
+
+            double expectedDistance = 1.0;
+
+            //Assert
+            Assert.AreEqual(expectedDistance, converter.ToDistance);
+
+
+        }
+        [TestMethod]
         public void TestMilesToFeet()
         {
             // Arrange 
@@ -28,15 +70,57 @@ namespace ConsoleApp.Test
 
         }
         [TestMethod]
-        public void TestFeetToMiles()
+        public void TestMilesToMeters()
         {
             // Arrange 
             DistanceConverter converter = new DistanceConverter();
 
-            converter.FromUnit = DistanceConverter.FEET;
+            converter.FromUnit = DistanceConverter.MILES;
+            converter.ToUnit = DistanceConverter.METERS;
+
+            converter.FromDistance = 1.0;
+
+            //Act
+            converter.CalculateDistance();
+
+            double expectedDistance = 1609.34;
+
+            //Assert
+            Assert.AreEqual(expectedDistance, converter.ToDistance);
+
+
+        }
+        [TestMethod]
+        public void TestMetersToFeet()
+        {
+            // Arrange 
+            DistanceConverter converter = new DistanceConverter();
+
+            converter.FromUnit = DistanceConverter.METERS;
+            converter.ToUnit = DistanceConverter.FEET;
+
+            converter.FromDistance = 1.0;
+
+            //Act
+            converter.CalculateDistance();
+
+            double expectedDistance = 3.28084;
+
+            //Assert
+            Assert.AreEqual(expectedDistance, converter.ToDistance);
+
+
+        }
+        [TestMethod]
+        public void TestMetersToMiles()
+        {
+            // Arrange 
+            DistanceConverter converter = new DistanceConverter();
+
+            converter.FromUnit = DistanceConverter.METERS;
             converter.ToUnit = DistanceConverter.MILES;
 
-            converter.FromDistance = 5280;
+            converter.FromDistance = 1609.34;
 
             //Act
             converter.CalculateDistance();

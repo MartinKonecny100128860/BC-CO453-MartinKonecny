@@ -41,6 +41,16 @@ namespace ConsoleAppProject.App01
         {
             FromUnit = MILES;
             ToUnit = FEET;
+            FromUnit = MILES;
+            ToUnit = METERS;
+            FromUnit = FEET;
+            ToUnit = MILES;
+            FromUnit = FEET;
+            ToUnit = METERS;
+            FromUnit = METERS;
+            ToUnit = FEET;
+            FromUnit = METERS;
+            ToUnit = MILES;
         }
 
         /// <summary>
