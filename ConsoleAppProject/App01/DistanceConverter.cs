@@ -1,5 +1,6 @@
 ﻿using ConsoleAppProject.App01;
 using System;
+using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Xml.Serialization;
 
@@ -173,7 +174,7 @@ namespace ConsoleAppProject.App01
             Console.Write(prompt);
             string value = Console.ReadLine();
             double distance;
-            while (!double.TryParse(value, out distance))
+            while (!double.TryParse(value, out distance) || value.Any(c => !char.IsLetterOrDigit(c)))
             {
                 Console.WriteLine(" This input is inavlid! Please try again.");
                 Console.Write(prompt);
