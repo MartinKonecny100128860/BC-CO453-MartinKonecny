@@ -1,34 +1,42 @@
-﻿using ConsoleAppProject.App01;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ConsoleAppProject.App02;
 
 namespace ConsoleApp.Test
 {
-    public class TestBMI
+    [TestClass]
+    public class BMICalculatorTests
     {
         [TestMethod]
-        public void TestInchesToFeet()
+        public void TestUnderweightMetricBMI()
         {
-            // Arrange 
-            DistanceConverter converter = new DistanceConverter();
+            // Arrange
+            BMI bmi = new BMI();
+            bmi.metres = 1.8;
+            bmi.Kilograms = 50;
 
-            converter.FromUnit = DistanceConverter.FEET;
-            converter.ToUnit = DistanceConverter.MILES;
+            // Act
+            bmi.CalculateMetricBMI();
+            double expectedMetricBMI = 15.43;
 
-            converter.FromDistance = 5280;
-
-            //Act
-            converter.CalculateDistance();
-
-            double expectedDistance = 1.0;
-
-            //Assert
-            Assert.AreEqual(expectedDistance, converter.ToDistance);
-
-
+            //Assert Stage
+            Assert.AreEqual(expectedMetricBMI, Math.Round(bmi.Index, 2));
         }
+
+        [TestMethod]
+        public void TestUnderweightImperialBMI()
+        {
+            // Arrange
+            BMI bmi = new BMI();
+            bmi.Inches = 70;
+            bmi.Pounds = 110;
+
+            // Act
+            bmi.CalculateImperialBMI();
+            double expectedImperialBMI = 15.78;
+
+            // Assert
+            Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.Index, 2));
+        }
+
     }
 }
