@@ -62,6 +62,7 @@ namespace ConsoleAppProject.App02
         public void CalculateIndex()
         {
             ConsoleHelper.OutputHeading(" Body Mass Index Calculator");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
 
             UnitSystems unitSystem = SelectUnits();
 
