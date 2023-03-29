@@ -213,6 +213,7 @@ namespace ConsoleAppProject.App01
         /// </summary>
         private void OutputHeading()
         {
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
             Console.WriteLine("\n -------------------------------------------------");
             Console.WriteLine("                 Distance Converter                 ");
             Console.WriteLine("                 By Martin Konecny                  ");
