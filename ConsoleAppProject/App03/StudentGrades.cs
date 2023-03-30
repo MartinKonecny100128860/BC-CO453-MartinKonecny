@@ -117,41 +117,46 @@ namespace ConsoleAppProject.App03
         {
             get
             {
-                if (Marks != null)
+                if (Marks == null)
                 {
-                    char[] grades = new char[Marks.Length];
-                    for (int i = 0; i < Marks.Length; i++)
-                    {
-                        if (Marks[i] >= 80)
-                        {
-                            grades[i] = 'A';
-                        }
-                        else if (Marks[i] >= 70)
-                        {
-                            grades[i] = 'B';
-                        }
-                        else if (Marks[i] >= 60)
-                        {
-                            grades[i] = 'C';
-                        }
-                        else if (Marks[i] >= 50)
-                        {
-                            grades[i] = 'D';
-                        }
-                        else
-                        {
-                            grades[i] = 'F';
-                        }
-                    }
-                        return grades;
+                    return null;
                 }
-                    else
-                    {
-                        return null;
-                    }
+
+                char[] grades = new char[Marks.Length];
+
+                for (int Index = 0; Index < Marks.Length; Index++)
+                {
+                    grades[Index] = StudentGrade(Marks[Index]);
+                }
+
+                return grades;
             }
         }
- 
+
+        private char StudentGrade(int mark)
+        {
+            if (mark >= 80)
+            {
+                return 'A';
+            }
+            else if (mark >= 70)
+            {
+                return 'B';
+            }
+            else if (mark >= 60)
+            {
+                return 'C';
+            }
+            else if (mark >= 50)
+            {
+                return 'D';
+            }
+            else
+            {
+                return 'F';
+            }
+        }
+
 
         /// <summary>
         /// Input a mark between 0-100 for one and every student and store
