@@ -1,6 +1,7 @@
 ﻿using ConsoleAppProject.App01;
 using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
+using ConsoleAppProject.App04;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -19,6 +20,7 @@ namespace ConsoleAppProject
         private static DistanceConverter converter = new DistanceConverter();
         private static BMI BmiCalculator = new BMI();
         private static StudentGrades Grades = new StudentGrades();
+        private static NetworkApp Media = new NetworkApp();
 
 
         public static void Main()
@@ -48,6 +50,10 @@ namespace ConsoleAppProject
             else if (option == 3)
             {
                 Grades.OutputMenu();
+            }
+            else if (option == 4)
+            {
+                Media.DisplayChoices();
             }
 
         }
