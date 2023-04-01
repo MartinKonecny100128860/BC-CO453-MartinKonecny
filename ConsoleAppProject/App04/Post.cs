@@ -1,33 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Runtime.Versioning;
+
 
 namespace ConsoleAppProject.App04
 {
-    public class Post : NewsFeed
+    public class Post
     {
-        // username of the post's author
-        public string Username { get; }
-
-        public DateTime Timestamp { get; }
-
-        public int PostId { get; }
+        public int IdPost { get; }
 
         private static int instances = 0;
 
         private int likes;
 
-        private readonly List<string> comments;
+        private readonly List<String> comments;
 
+        // username of the post's author
+        public String Username { get; }
+
+        public DateTime Timestamp { get; }
+        public string PostDate { get; }
+
+        /// <summary>
+        /// Constructor for what every/per Post should look like using the specific author
+        /// </summary>
         public Post(string author)
         {
             instances++;
-            PostId = instances;
+            IdPost = instances;
+
             this.Username = author;
             Timestamp = DateTime.Now;
+            PostDate = Timestamp.ToShortDateString();
 
             likes = 0;
-            comments = new List<string>();
+            comments = new List<String>();
         }
 
         /// <summary>
@@ -49,57 +56,15 @@ namespace ConsoleAppProject.App04
             }
         }
 
-        //public int GetNumberOfPosts()
-        //{
-        //    int NumberOfPosts = 0;
-        //    foreach (Post post in Posts)
-        //    {
-        //        NumberOfPosts++;
-        //    }
-        //    return NumberOfPosts;
-        //}
-
         ///<summary>
         /// Add a comment to this post.
         /// </summary>
         /// <param name="text">
         /// The new comment to add.
         /// </param>        
-        public void AddComment(string text)
+        public void AddComment(String text)
         {
             comments.Add(text);
-        }
-
-        ///<summary>
-        /// Display the details of this post.
-        /// 
-        /// (Currently: Print to the text terminal. This is simulating display 
-        /// in a web browser for now.)
-        ///</summary>
-        public new virtual void Display()
-        {
-            Console.WriteLine();
-            Console.WriteLine($"    Author: {Username}");
-            Console.WriteLine($"    Time Elapsed: {FormatElapsedTime(Timestamp)}");
-            Console.WriteLine();
-
-            if (likes > 0)
-            {
-                Console.WriteLine($"    Likes:  {likes}  people like this.");
-            }
-            else
-            {
-                Console.WriteLine();
-            }
-
-            if (comments.Count == 0)
-            {
-                Console.WriteLine("    No comments.");
-            }
-            else
-            {
-                Console.WriteLine($"    {comments.Count}  comment(s). Click here to view.");
-            }
         }
 
         ///<summary>
@@ -113,7 +78,7 @@ namespace ConsoleAppProject.App04
         /// <returns>
         /// A relative time string for the given time
         /// </returns>      
-        private string FormatElapsedTime(DateTime time)
+        private String FormatElapsedTime(DateTime time)
         {
             DateTime current = DateTime.Now;
             TimeSpan timePast = current - time;
@@ -128,6 +93,42 @@ namespace ConsoleAppProject.App04
             else
             {
                 return seconds + " seconds ago";
+            }
+        }
+        ///<summary>
+        /// Display the details of this post.
+        /// 
+        /// (Currently: Print to the text terminal. This is simulating display 
+        /// in a web browser for now.)
+        ///</summary>
+        public new virtual void Display()
+        {
+            Console.WriteLine($"    ID Posts:     {IdPost}");
+            Console.WriteLine($"    Author:       {Username}");
+            Console.WriteLine($"    Time Elapsed: {FormatElapsedTime(Timestamp)}");
+            Console.WriteLine($"    Post Date:    {PostDate}");
+
+            if (likes > 0)
+            {
+                Console.WriteLine($"    Likes:    {likes}  people like this.");
+            }
+            else
+            {
+                Console.WriteLine($"    There are currently 0 likes.");
+            }
+
+            if (comments.Count == 0)
+            {
+                Console.WriteLine("    No comments.");
+            }
+            else
+            {
+                Console.WriteLine($"    {comments.Count}  comment(s). Click here to view.");
+                Console.WriteLine();
+                foreach (string comments in comments)
+                {
+                    Console.WriteLine($"    {comments}");
+                }
             }
         }
     }

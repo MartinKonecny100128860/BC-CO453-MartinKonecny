@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ConsoleAppProject.App04
 {
@@ -13,8 +12,12 @@ namespace ConsoleAppProject.App04
     /// version 0.1
     /// </author>
     public class MessagePost : Post
-    { // an arbitrarily long, multi-line message
+    {
+
+        // an arbitrarily long, multi-line message
         public String Message { get; }
+
+
 
         /// <summary>
         /// Constructor for objects of class MessagePost.
@@ -25,10 +28,16 @@ namespace ConsoleAppProject.App04
         /// <param name="text">
         /// The text of this post.
         /// </param>
-        public MessagePost(String author, String text): base(author)
+        public MessagePost(String author, String text) : base(author)
         {
             Message = text;
         }
 
+        public override void Display()
+        {
+            Console.WriteLine($"    Message: {Message}");
+
+            base.Display();
+        }
     }
 }
