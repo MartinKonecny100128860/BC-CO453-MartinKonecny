@@ -54,6 +54,14 @@ namespace ConsoleAppProject.App01
             ToUnit = MILES;
         }
 
+        public DistanceUnits DistanceUnits
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         /// <summary>
         /// this method will input the distanced measured from miles to feet. It is the main
         /// methid for this application

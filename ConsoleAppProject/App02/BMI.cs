@@ -213,5 +213,12 @@ namespace ConsoleAppProject.App02
             return message.ToString();
         }
 
+        public UnitSystems UnitSystems1
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

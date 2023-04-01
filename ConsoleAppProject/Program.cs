@@ -22,6 +22,21 @@ namespace ConsoleAppProject
         private static StudentGrades Grades = new StudentGrades();
         private static NetworkApp Media = new NetworkApp();
 
+        public static BMI BMI
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public static DistanceConverter DistanceConverter
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
         public static void Main()
         {
