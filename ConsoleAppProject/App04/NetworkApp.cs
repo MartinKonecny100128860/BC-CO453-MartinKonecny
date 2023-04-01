@@ -2,6 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
+using System.Xml.Linq;
+using System.Threading.Tasks;
 
 namespace ConsoleAppProject.App04
 {
@@ -89,19 +92,41 @@ namespace ConsoleAppProject.App04
         }
         private void DisplayAll()
         {
+            ConsoleHelper.OutputTitle("Displaying all posts!");
+
             news.Display();
         }
         private void DisplayByAuthor()
         {
-            throw new NotImplementedException();
+            ConsoleHelper.OutputTitle("Display Posts by Author");
+
+            Console.Write("\n Enter the name of the author here: ");
+
+            string author = Console.ReadLine();
+
+            news.FindAuthorPost(author);
         }
+
         private void DisplayByDate()
         {
-            throw new NotImplementedException();
+            ConsoleHelper.OutputTitle("Displaying posts by date");
         }
         private void AddComment()
         {
-            throw new NotImplementedException();
+            ConsoleHelper.OutputTitle("Add a comment");
+
+            string author = InputName();
+
+            Console.WriteLine("Please enter a caption for your image");
+            string comment = Console.ReadLine();
+
+            //news.AddComment(comment);
+
+
+            ConsoleHelper.OutputTitle("The comment has been posted:");
+            news.Display();
+
+
         }
         private void LikePosts()
         {

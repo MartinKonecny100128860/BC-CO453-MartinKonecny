@@ -100,6 +100,21 @@ namespace ConsoleAppProject.App04
             return null;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="author"></param>
+        public void FindAuthorPost(string author)
+        {
+            foreach (Post post in posts)
+            {
+                if (post.Username == author)
+                {
+                    post.Display();
+                }
+            }
+        }
+
         ///<summary>
         /// Show the news feed. Currently: print the news feed details to the
         /// terminal. (To do: replace this later with display in web browser.)
