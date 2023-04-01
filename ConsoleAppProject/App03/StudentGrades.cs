@@ -279,40 +279,15 @@ namespace ConsoleAppProject.App03
             MeanStudentMarks = total / MarksOfStudents.Length;
         }
 
-        /// <summary>
-        /// This method calculates the grade profile
-        /// </summary>
+
         public void CalculateGradeProfile()
         {
-            for (int index = 0; index < StudentsGradeProfile.Length; index++)
-            {
-                StudentsGradeProfile[index] = 0;
-            }
-
-            foreach (int mark in MarksOfStudents)
-            {
-                Grades grade = ConvertToGrade(mark);
-                StudentsGradeProfile[(int)grade]++;
-            }
-            OutputGradeProfile();
+            throw new NotImplementedException();
         }
 
-                /// <summary>
-        /// Outputs Grades for each student
-        /// </summary>
-        public void OutputGradeProfile()
+        private void OutputGradeProfile()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Grades grade = Grades.F;
-            Console.WriteLine();
-
-            foreach (int count in StudentsGradeProfile)
-            {
-                int percentage = count * 100 / MarksOfStudents.Length;
-                ConsoleHelper.InputNumber($"Grade {grade}  {percentage}% Count {count}");
-                grade++;
-            }
-            Console.WriteLine();
+            throw new NotImplementedException();
         }
 
 
