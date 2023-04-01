@@ -100,11 +100,26 @@ namespace ConsoleAppProject.App04
             return null;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="author"></param>
-        public void FindAuthorPost(string author)
+        public void AddComment(string comment)
+        {
+            Console.WriteLine(" Input The ID");
+            int id = int.Parse(Console.ReadLine());
+            foreach (Post post in posts)
+            {
+                if (post.IdPost == id)
+                {
+                    post.AddComment(comment);
+                    post.Display();
+                    Console.WriteLine($"\n");
+                }
+            }
+
+        }
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="author"></param>
+            public void FindAuthorPost(string author)
         {
             foreach (Post post in posts)
             {
@@ -128,6 +143,7 @@ namespace ConsoleAppProject.App04
                 Console.WriteLine();   // empty line between posts
             }
         }
+
     }
 
 }

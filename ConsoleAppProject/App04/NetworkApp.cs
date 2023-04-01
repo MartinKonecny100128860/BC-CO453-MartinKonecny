@@ -110,24 +110,25 @@ namespace ConsoleAppProject.App04
         private void DisplayByDate()
         {
             ConsoleHelper.OutputTitle("Displaying posts by date");
+
         }
         private void AddComment()
         {
-            ConsoleHelper.OutputTitle("Add a comment");
+            ConsoleHelper.OutputTitle("Add a comment to a poost");
 
             string author = InputName();
 
-            Console.WriteLine("Please enter a caption for your image");
+            Console.WriteLine("Please enter a your comment here: ");
             string comment = Console.ReadLine();
 
-            //news.AddComment(comment);
+            news.AddComment(comment);
 
-
-            ConsoleHelper.OutputTitle("The comment has been posted:");
+            ConsoleHelper.OutputTitle("The comment has been posted!");
             news.Display();
 
 
         }
+
         private void LikePosts()
         {
             ConsoleHelper.OutputTitle("Like a Post");
