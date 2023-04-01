@@ -105,7 +105,22 @@ namespace ConsoleAppProject.App04
         }
         private void LikePosts()
         {
-            throw new NotImplementedException();
+            ConsoleHelper.OutputTitle("Like a Post");
+
+            int postId = (int)ConsoleHelper.InputNumber("Enter the ID of the post you want to like:");
+
+            Post post = news.FindPost(postId);
+
+            if (post == null)
+            {
+                Console.WriteLine($"Post with ID {postId} not found.");
+            }
+            else
+            {
+                post.Like();
+                Console.WriteLine("Post liked!");
+                post.Display();
+            }
         }
     }
 }
