@@ -67,6 +67,16 @@ namespace ConsoleAppProject.App04
             comments.Add(text);
         }
 
+        //public int GetNumberOfPosts()
+        //{
+        //    int NumberOfPosts = 0;
+        //    foreach (Post post in Post)
+        //    {
+        //        NumberOfPosts++;
+        //    }
+        //    return NumberOfPosts;
+        //}
+
         ///<summary>
         /// Create a string describing a time point in the past in terms 
         /// relative to current time, such as "30 seconds ago" or "7 minutes ago".

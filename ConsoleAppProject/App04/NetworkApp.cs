@@ -40,15 +40,52 @@ namespace ConsoleAppProject.App04
         }
         private void PostMessage()
         {
-            throw new NotImplementedException();
+            ConsoleHelper.OutputTitle("Post a message");
+
+            string author = InputName();
+
+            Console.WriteLine("Please type in your message here");
+            string message = Console.ReadLine();
+
+            MessagePost post = new MessagePost(author, message);
+            news.AddMessagePost(post);
+
+            ConsoleHelper.OutputTitle("Your message has been posted:");
+            post.Display();
         }
         private void PostImage()
         {
-            throw new NotImplementedException();
+            ConsoleHelper.OutputTitle("Post an Photo/Image");
+
+            string author = InputName();
+
+            Console.WriteLine("Please the file name of the image you want to post");
+            string filename = Console.ReadLine();
+
+            Console.WriteLine("Please enter a caption for your image");
+            string caption = Console.ReadLine();
+
+            PhotoPost post = new PhotoPost(author, filename, caption);
+            news.AddPhotoPost(post);
+
+            ConsoleHelper.OutputTitle("This image has been posted:");
+            post.Display();
         }
+
+        private string InputName()
+        {
+            Console.WriteLine("Please enter your name/username");
+            string author = Console.ReadLine();
+
+            return author;
+        }
+
         private void RemovePost()
         {
-            throw new NotImplementedException();
+            ConsoleHelper.OutputTitle($" Removing a post");
+
+            int id = (int)ConsoleHelper.InputNumber(" Please enter the ID of the post you want to remove");
+            news.RemovePost(id);
         }
         private void DisplayAll()
         {
