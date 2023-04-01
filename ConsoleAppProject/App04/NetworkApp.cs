@@ -107,7 +107,7 @@ namespace ConsoleAppProject.App04
         {
             ConsoleHelper.OutputTitle("Like a Post");
 
-            int postId = (int)ConsoleHelper.InputNumber("Enter the ID of the post you want to like:");
+            int postId = (int)ConsoleHelper.InputNumber("Type in the ID of the post you wish to like > ");
 
             Post post = news.FindPost(postId);
 
@@ -118,7 +118,7 @@ namespace ConsoleAppProject.App04
             else
             {
                 post.Like();
-                Console.WriteLine("Post liked!");
+                Console.WriteLine("The post has been liked!");
                 post.Display();
             }
         }
