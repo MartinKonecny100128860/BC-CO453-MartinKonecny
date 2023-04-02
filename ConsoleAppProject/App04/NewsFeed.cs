@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System;
 
 
 namespace ConsoleAppProject.App04
@@ -18,7 +18,7 @@ namespace ConsoleAppProject.App04
     ///  Michael Kölling and David J. Barnes
     ///  version 0.1
     ///</author> 
-    public class NewsFeed : NetworkApp
+    public class NewsFeed
     {
         public const string AUTHOR = "Martin";
         private readonly List<Post> posts;

@@ -5,7 +5,7 @@ using System.Runtime.Versioning;
 
 namespace ConsoleAppProject.App04
 {
-    public class Post : NewsFeed
+    public class Post
     {
         public int IdPost { get; }
 
