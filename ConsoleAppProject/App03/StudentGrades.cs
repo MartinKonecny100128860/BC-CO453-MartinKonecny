@@ -311,7 +311,13 @@ namespace ConsoleAppProject.App03
             OutputMenu();
         }
 
-
+        public Grades Grades1
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 
 }
