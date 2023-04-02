@@ -18,7 +18,7 @@ namespace ConsoleAppProject.App04
     ///  Michael Kölling and David J. Barnes
     ///  version 0.1
     ///</author> 
-    public class NewsFeed
+    public class NewsFeed : NetworkApp
     {
         public const string AUTHOR = "Martin";
         private readonly List<Post> posts;
@@ -71,11 +71,11 @@ namespace ConsoleAppProject.App04
             {
                 Console.WriteLine($"\nThe following post {id} has been removed!\n");
 
-                if(post is MessagePost mp)
+                if (post is MessagePost mp)
                 {
                     mp.Display();
                 }
-                else if(post is PhotoPost pp) 
+                else if (post is PhotoPost pp)
                 {
                     pp.Display();
                 }
@@ -89,9 +89,9 @@ namespace ConsoleAppProject.App04
 
         public Post FindPost(int id)
         {
-            foreach(Post post in posts)
+            foreach (Post post in posts)
             {
-                if(post.IdPost == id)
+                if (post.IdPost == id)
                 {
                     return post;
                 }
@@ -115,11 +115,11 @@ namespace ConsoleAppProject.App04
             }
 
         }
-            /// <summary>
-            /// 
-            /// </summary>
-            /// <param name="author"></param>
-            public void FindAuthorPost(string author)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="author"></param>
+        public void FindAuthorPost(string author)
         {
             foreach (Post post in posts)
             {
