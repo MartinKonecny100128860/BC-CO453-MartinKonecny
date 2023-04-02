@@ -44,6 +44,19 @@ namespace ConsoleApp.Test
         }
 
         [TestMethod]
+        public void TestConvert40ToGradeD()
+        {
+            //arrange
+            Grades expectedGrade = Grades.D;
+
+            //act
+            Grades actualGrade = studentGrades.ConvertToGrade(40);
+
+            //assert
+            Assert.AreEqual(expectedGrade, actualGrade);
+        }
+
+        [TestMethod]
         public void TestConvert49ToGradeD()
         {
             //arrange
@@ -51,6 +64,19 @@ namespace ConsoleApp.Test
 
             //act
             Grades actualGrade = studentGrades.ConvertToGrade(49);
+
+            //assert
+            Assert.AreEqual(expectedGrade, actualGrade);
+        }
+
+        [TestMethod]
+        public void TestConvert50ToGradeC()
+        {
+            //arrange
+            Grades expectedGrade = Grades.C;
+
+            //act
+            Grades actualGrade = studentGrades.ConvertToGrade(50);
 
             //assert
             Assert.AreEqual(expectedGrade, actualGrade);
@@ -83,13 +109,26 @@ namespace ConsoleApp.Test
         }
 
         [TestMethod]
-        public void TestConvert79ToGradeA()
+        public void TestConvert60ToGradeB()
+        {
+            //arrange
+            Grades expectedGrade = Grades.B;
+
+            //act
+            Grades actualGrade = studentGrades.ConvertToGrade(60);
+
+            //assert
+            Assert.AreEqual(expectedGrade, actualGrade);
+        }
+
+        [TestMethod]
+        public void TestConvert70ToGradeA()
         {
             //arrange
             Grades expectedGrade = Grades.A;
 
             //act
-            Grades actualGrade = studentGrades.ConvertToGrade(79);
+            Grades actualGrade = studentGrades.ConvertToGrade(70);
 
             //assert
             Assert.AreEqual(expectedGrade, actualGrade);
@@ -107,9 +146,10 @@ namespace ConsoleApp.Test
             //assert
             Assert.AreEqual(expectedGrade, actualGrade);
         }
+
         //ayo
         [TestMethod]
-        public void TestCalculateMax()
+        public void TestCalculateHighestMark()
         {
             converter.MarksOfStudents = StatsMarks;
             int expectedMax = 100;
@@ -120,7 +160,7 @@ namespace ConsoleApp.Test
         }
 
         [TestMethod]
-        public void TestCalculateMin()
+        public void TestCalculateLowestMark()
         {
             converter.MarksOfStudents = StatsMarks;
             int expectedMin = 10;
@@ -131,7 +171,7 @@ namespace ConsoleApp.Test
         }
 
         [TestMethod]
-        public void TestCalculateMean()
+        public void TestCalculateMeanStat()
         {
             converter.MarksOfStudents = StatsMarks;
 
