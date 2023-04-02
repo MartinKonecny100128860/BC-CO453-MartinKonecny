@@ -9,7 +9,7 @@ namespace ConsoleAppProject.App02
     /// Please describe the main features of this App
     /// </summary>
     /// <author>
-    /// Student Name version 0.1
+    /// Student Name version 0.1 6'5 14 1
     /// </author>
     public class BMI
     {
