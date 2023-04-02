@@ -74,7 +74,7 @@ namespace ConsoleAppProject.Helpers
                 catch (Exception)
                 {
                     isValid = false;
-                    Console.WriteLine(" INVALID NUMBER!");
+                    Console.WriteLine(" THIS NUMBER IS INVALID! TRY AGAIN! ");
                 }
 
             } while (!isValid);
@@ -121,15 +121,15 @@ namespace ConsoleAppProject.Helpers
         /// </summary>
         public static void OutputHeading(string heading)
         {
-            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
 
-            Console.WriteLine("\n ---------------------------------");
-            Console.WriteLine($"    {heading}          ");
-            Console.WriteLine("     by Martin Konecny           ");
-            Console.WriteLine(" ---------------------------------" +
+            Console.WriteLine("\n =================================");
+            Console.WriteLine($"        {heading}                  ");
+            Console.WriteLine("         by. Martin Konecny         ");
+            Console.WriteLine(" =================================" +
                 "\n");
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
+
         }
 
         /// <summary>
