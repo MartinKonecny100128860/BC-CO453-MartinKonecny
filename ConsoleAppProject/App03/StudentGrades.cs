@@ -33,7 +33,7 @@ namespace ConsoleAppProject.App03
 
         public string[] Students { get; set; }
         public int[] MarksOfStudents { get; set; }
-        public int[] StudentsGradeProfile { get; set; }
+        public int[] GradeProfile { get; set; }
         public double MeanStudentMarks { get; private set; }
         public int MaxiMarks { get; private set; }
         public int MiniMarks { get; private set; }
@@ -59,8 +59,9 @@ namespace ConsoleAppProject.App03
                 "Brando"
             };
 
-            StudentsGradeProfile = new int[(int)Grades.A + 1];
+            GradeProfile = new int[(int)Grades.A + 1];
             MarksOfStudents = new int[Students.Length];
+
         }
 
         // display menu of different options
@@ -70,14 +71,14 @@ namespace ConsoleAppProject.App03
             do
             {
                 ConsoleHelper.OutputHeading(" Student Marks ");
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
 
                 Console.WriteLine(" \n Enter a number to select an option: \n ");
                 Console.WriteLine(" 1. Input Marks For Each Student > ");
                 Console.WriteLine(" 2. Output Grades For All Students > ");
                 Console.WriteLine(" 3. Output Mean / Statistics Marks > ");
                 Console.WriteLine(" 4. Output Students Grades > ");
-                Console.WriteLine(" 5. Outpy Grade Profile");
+                Console.WriteLine(" 5. Output Grade Profile");
                 Console.WriteLine(" 6. Exit");
 
                 string input = Console.ReadLine();
@@ -187,7 +188,7 @@ namespace ConsoleAppProject.App03
         public void OutputMarks()
         {
             ConsoleHelper.OutputHeading("Student marks:\n");
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
 
             for (int index = 0; index < Students.Length; index++)
             {
@@ -206,7 +207,7 @@ namespace ConsoleAppProject.App03
         public void OutputGrades()
         {
             ConsoleHelper.OutputHeading("\n Outputting grades for each student:");
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
 
             for (int index = 0; index < Students.Length; index++)
             {
@@ -223,7 +224,7 @@ namespace ConsoleAppProject.App03
             CalculateStats();
 
             ConsoleHelper.OutputHeading("Stats");
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
 
             Console.WriteLine($"\n Mean mark: {MeanStudentMarks:F2}");
             Console.WriteLine($"\n Maximum mark: {MaxiMarks}");
@@ -282,12 +283,35 @@ namespace ConsoleAppProject.App03
 
         public void CalculateGradeProfile()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < GradeProfile.Length; i++)
+            {
+                GradeProfile[i] = 0;
+            }
+            foreach (int mark in MarksOfStudents)
+            {
+                Grades grade = ConvertToGrade(mark);
+                GradeProfile[(int)grade]++;
+            }
         }
 
-        private void OutputGradeProfile()
+        /// <summary>
+        /// Outputs the Grade Profile
+        /// </summary>
+        public void OutputGradeProfile()
         {
-            throw new NotImplementedException();
+            CalculateGradeProfile();
+            ConsoleHelper.OutputHeading("Student Grades");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+
+            Grades grade = Grades.F;
+
+            foreach (int count in GradeProfile)
+            {
+                int percentage = count * 100 / MarksOfStudents.Length;
+                Console.WriteLine($"Grade {grade} Profile\n Percentage: {percentage}% | Student Count: {count}");
+                grade++;
+            }
+            OutputMenu();
         }
 
 
