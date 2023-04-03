@@ -209,7 +209,7 @@ namespace ConsoleAppProject.App02
             message.Append(" If you are black, Asian, or other minority");
             message.Append(" ethic groups, you have a higher risk");
             message.Append("\n");
-            message.Append("\n Adults 23.0 or more are at increased risk");
+            message.Append("\n Adults 23.0 or more are at increased risk!");
 
             return message.ToString();
         }
