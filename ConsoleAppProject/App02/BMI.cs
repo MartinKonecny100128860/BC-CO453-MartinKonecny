@@ -205,6 +205,7 @@ namespace ConsoleAppProject.App02
         public string GetBameMessage()
         {
             StringBuilder message = new StringBuilder("\n");
+            ConsoleHelper.OutputTitle("BAME MESSAGE");
             message.Append(" If you are black, Asian, or other minority");
             message.Append(" ethic groups, you have a higher risk");
             message.Append("\n");

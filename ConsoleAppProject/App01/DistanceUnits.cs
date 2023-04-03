@@ -12,6 +12,9 @@ namespace ConsoleAppProject.App01
         Feet,
         Metres,
         Kilometres,
-        Miles
+        Miles,
+        Inches,
+        Kilometers,
+        Yards
     }
 }
