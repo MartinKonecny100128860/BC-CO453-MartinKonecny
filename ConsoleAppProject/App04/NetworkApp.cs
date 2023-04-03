@@ -10,6 +10,7 @@ namespace ConsoleAppProject.App04
         public void DisplayChoices()
         {
             ConsoleHelper.OutputHeading("Welcome to this Network App");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
 
             string[] choices = new string[]
             {
@@ -40,6 +41,7 @@ namespace ConsoleAppProject.App04
         private void PostMessage()
         {
             ConsoleHelper.OutputTitle("Post a message");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
 
             string author = InputName();
 
@@ -50,11 +52,13 @@ namespace ConsoleAppProject.App04
             news.AddMessagePost(post);
 
             ConsoleHelper.OutputTitle("Your message has been posted:");
+            Console.WriteLine("\n");
             post.Display();
         }
         private void PostImage()
         {
             ConsoleHelper.OutputTitle("Post an Photo/Image");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
 
             string author = InputName();
 
@@ -74,6 +78,7 @@ namespace ConsoleAppProject.App04
         private string InputName()
         {
             Console.WriteLine("Please enter your name/username");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             string author = Console.ReadLine();
 
             return author;
@@ -82,6 +87,7 @@ namespace ConsoleAppProject.App04
         private void RemovePost()
         {
             ConsoleHelper.OutputTitle($" Removing a post");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
 
             int id = (int)ConsoleHelper.InputNumber(" Please enter the ID of the post you want to remove");
             news.RemovePost(id);
@@ -89,12 +95,15 @@ namespace ConsoleAppProject.App04
         private void DisplayAll()
         {
             ConsoleHelper.OutputTitle("Displaying all posts!");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
 
+            Console.WriteLine("\n");
             news.Display();
         }
         private void DisplayByAuthor()
         {
             ConsoleHelper.OutputTitle("Display Posts by Author");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
 
             Console.Write("\n Enter the name of the author here: ");
 
@@ -106,11 +115,13 @@ namespace ConsoleAppProject.App04
         private void DisplayByDate()
         {
             ConsoleHelper.OutputTitle("Displaying posts by date");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
 
         }
         private void AddComment()
         {
             ConsoleHelper.OutputTitle("Add a comment to a poost");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
 
             string author = InputName();
 
@@ -120,6 +131,7 @@ namespace ConsoleAppProject.App04
             news.AddComment(comment);
 
             ConsoleHelper.OutputTitle("The comment has been posted!");
+            Console.WriteLine("\n");
             news.Display();
 
 
@@ -128,6 +140,7 @@ namespace ConsoleAppProject.App04
         private void LikePosts()
         {
             ConsoleHelper.OutputTitle("Like a Post");
+            Console.ForegroundColor = ConsoleColor.DarkRed;
 
             int postId = (int)ConsoleHelper.InputNumber("Type in the ID of the post you wish to like > ");
 

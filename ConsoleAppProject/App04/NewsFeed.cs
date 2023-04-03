@@ -140,6 +140,7 @@ namespace ConsoleAppProject.App04
             foreach (Post posts in posts)
             {
                 posts.Display();
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine();   // empty line between posts
             }
         }
