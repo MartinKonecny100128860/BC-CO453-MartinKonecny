@@ -52,7 +52,6 @@ namespace ConsoleAppProject.App04
             news.AddMessagePost(post);
 
             ConsoleHelper.OutputTitle("Your message has been posted:");
-            Console.WriteLine("\n");
             post.Display();
         }
         private void PostImage()
@@ -97,7 +96,6 @@ namespace ConsoleAppProject.App04
             ConsoleHelper.OutputTitle("Displaying all posts!");
             Console.ForegroundColor = ConsoleColor.DarkYellow;
 
-            Console.WriteLine("\n");
             news.Display();
         }
         private void DisplayByAuthor()
@@ -131,7 +129,6 @@ namespace ConsoleAppProject.App04
             news.AddComment(comment);
 
             ConsoleHelper.OutputTitle("The comment has been posted!");
-            Console.WriteLine("\n");
             news.Display();
 
 
