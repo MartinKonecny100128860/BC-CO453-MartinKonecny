@@ -1,10 +1,6 @@
 ﻿using ConsoleAppProject.Helpers;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using static System.Net.Mime.MediaTypeNames;
-using System.Xml.Linq;
-using System.Threading.Tasks;
+
 
 namespace ConsoleAppProject.App04
 {
