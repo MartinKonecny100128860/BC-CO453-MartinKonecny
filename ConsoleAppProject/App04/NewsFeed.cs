@@ -65,11 +65,11 @@ namespace ConsoleAppProject.App04
             Post post = FindPost(id);
             if (post == null)
             {
-                Console.WriteLine($"\nPost with ID = {id} does not exist!\n");
+                Console.WriteLine($"\n Post with ID = {id} does not exist!\n");
             }
             else
             {
-                Console.WriteLine($"\nThe following post {id} has been removed!\n");
+                Console.WriteLine($"\n The following post {id} has been removed!\n");
 
                 if (post is MessagePost mp)
                 {
@@ -140,7 +140,7 @@ namespace ConsoleAppProject.App04
             foreach (Post posts in posts)
             {
                 posts.Display();
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine();   // empty line between posts
             }
         }

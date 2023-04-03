@@ -35,7 +35,9 @@ namespace ConsoleAppProject.App04
 
         public override void Display()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"    Message: {Message}");
+            Console.WriteLine($"\n");
 
             base.Display();
         }

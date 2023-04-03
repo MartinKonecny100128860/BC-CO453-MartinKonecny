@@ -42,6 +42,7 @@ namespace ConsoleAppProject.App04
 
         public override void Display()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"    Filename: [{Filename}]");
             Console.WriteLine($"    Caption: {Caption}");
 

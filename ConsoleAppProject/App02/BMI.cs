@@ -199,7 +199,7 @@ namespace ConsoleAppProject.App02
 
         }
         /// <summary>
-        /// This method returms a message about increased risks for all the listed groups
+        /// This method returms a message about increased risks for all the  listed groups
         /// of people
         /// </summary>
         public string GetBameMessage()

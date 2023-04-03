@@ -113,6 +113,7 @@ namespace ConsoleAppProject.App04
         ///</summary>
         public new virtual void Display()
         {
+            Console.ForegroundColor= ConsoleColor.DarkRed;
             Console.WriteLine($"    ID Posts:     {IdPost}");
             Console.WriteLine($"    Author:       {Username}");
             Console.WriteLine($"    Time Elapsed: {FormatElapsedTime(Timestamp)}");
@@ -140,6 +141,7 @@ namespace ConsoleAppProject.App04
                     Console.WriteLine($"    {comments}");
                 }
             }
+            Console.WriteLine($"\n");
         }
     }
 }
