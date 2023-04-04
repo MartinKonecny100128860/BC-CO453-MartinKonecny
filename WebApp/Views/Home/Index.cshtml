@@ -1,0 +1,73 @@
+﻿<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+
+@{
+    ViewData["Title"] = "MK Home page";
+}
+
+<header class="text-center jumbotron justify-content-center">
+    <h1 class="display-4"> CO453 Application Programming </h1>
+    <h2> By. Martin Konecny </h2>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</header>
+
+<section>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-action" >
+            <i class='fas fa-map-marked' style='color:#61457a'></i>
+            <a asp-controller="Home" asp-action="DistanceConverter" button type="button" class="btn">App01</a> <a> DISTANCE CONVERTER</a>
+        </li>
+
+        <li class="list-group-item list-group-item-action">
+            <i class='fas fa-heartbeat' style='color:#61457a'></i>
+            <a asp-controller="Home" asp-action="BMICalculator" button type="button" class="btn">App02</a> <a> BMI CALCULATOR </a>
+        </li>
+
+        <li class="list-group-item list-group-item-action">
+            <i class='fa fa-list-ol' style='color:#61457a'></i>
+            <a asp-controller="Home" asp-action="StudentMarks" button type="button" class="btn">App03</a> <a> STUDENT MARKS </a>
+        </li>
+
+        <li class="list-group-item list-group-item-action">
+            <i class='fas fa-address-card' style='color:#61457a'></i>
+            <a asp-controller="Home" asp-action="SocialNetwork" button type="button" class="btn">App04</a> <a> SOCIAL NETWORK </a>
+        </li>
+    </ul>
+</section>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<style>
+    body {
+        background-color: #121212;
+        font-family: 'Oswald';
+    }
+
+    body {
+        color: #61457a
+    }
+
+    .btn {
+        color: white;
+        background-color: #61457a;
+    }
+
+    .jumbotron {
+        background-color: #1f1e1e;
+    }
+
+    .list-group-item {
+        background-color: #1f1e1e;
+        color: #61457a;
+        font-size: 20px;
+    }
+</style>
