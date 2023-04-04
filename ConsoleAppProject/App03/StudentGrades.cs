@@ -38,7 +38,7 @@ namespace ConsoleAppProject.App03
         public int MaxiMarks { get; private set; }
         public int MiniMarks { get; private set; }
 
-        private int[] Marks;
+        public int[] Marks { get; set; }
 
         //Associations in the class diagram
         public Grades Grades

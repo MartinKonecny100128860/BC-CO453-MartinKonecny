@@ -54,7 +54,7 @@ namespace WebApps.Controllers
             return RedirectToAction("GetHealthMessage", new { Index });
         }
 
-        public IActionResult GetHealthMessage (double Index)
+        public IActionResult GetHealthMessage(double Index)
         {
             return View(Index);
         }

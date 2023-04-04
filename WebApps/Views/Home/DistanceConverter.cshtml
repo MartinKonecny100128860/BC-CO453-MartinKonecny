@@ -1,5 +1,5 @@
 ﻿<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
-integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
@@ -18,65 +18,65 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
     <h1>App01: Distance Converter</h1>
     <h2>by Martin Konecny</h2>
     <p>
-        This app will convert a distance entered in one unit into 
+        This app will convert a distance entered in one unit into
         the equalivent distance measured in another unit.
     </p>
 
 </header>
 
 <section>
-<form method="post">
+    <form method="post">
 
-    <h2>Convert from:</h2>
+        <h2>Convert from:</h2>
 
-    <p>
-        <label>From Unit: </label>
-        <select asp-for="FromUnit" required 
-                asp>
-            <option>@DistanceConverter.MILES</option>
-            <option>@DistanceConverter.METERS</option>
-            <option>@DistanceConverter.FEET</option>
-        </select>
-    </p>
-    <p>
-        @if (Model.FromDistance == 0)
-        {
-            <input type="text" asp-for="@Model.FromDistance" value=""
-                   placeholder="From Distance" required />
-        }
-        else
-        {
-            <input type="text" asp-for="@Model.FromDistance"
-               placeholder="From Distance" required />
-        }
-    </p>
+        <p>
+            <label>From Unit: </label>
+            <select asp-for="FromUnit" required
+                    asp>
+                <option>@DistanceConverter.MILES</option>
+                <option>@DistanceConverter.METERS</option>
+                <option>@DistanceConverter.FEET</option>
+            </select>
+        </p>
+        <p>
+            @if (Model.FromDistance == 0)
+            {
+                <input type="text" asp-for="@Model.FromDistance" value=""
+                       placeholder="From Distance" required />
+            }
+            else
+            {
+                <input type="text" asp-for="@Model.FromDistance"
+                       placeholder="From Distance" required />
+            }
+        </p>
         <h2>Convert to</h2>
 
-    <p>
-        <label>To Unit: </label>
-        <select asp-for="@Model.ToUnit">
-            <option>@DistanceConverter.MILES</option>
-            <option>@DistanceConverter.METERS</option>
-            <option>@DistanceConverter.FEET</option>
-        </select>
-    </p>
-    <p>
-        @if (Model.ToDistance == 0)
-        {
+        <p>
+            <label>To Unit: </label>
+            <select asp-for="@Model.ToUnit">
+                <option>@DistanceConverter.MILES</option>
+                <option>@DistanceConverter.METERS</option>
+                <option>@DistanceConverter.FEET</option>
+            </select>
+        </p>
+        <p>
+            @if (Model.ToDistance == 0)
+            {
                 <input type="text" asp-for="@Model.ToDistance" value=""
-                   placeholder="From Distance" readonly />
-        }
-        else
-        {
+                       placeholder="From Distance" readonly />
+            }
+            else
+            {
                 <input type="text" asp-for="@Model.ToDistance"
-                value="@Model.ToDistance.ToString("0.00")"
-                placeholder="To Distance" readonly />
-        }
-    </p>
-    <p>
+                   value="@Model.ToDistance.ToString("0.00")"
+                       placeholder="To Distance" readonly />
+            }
+        </p>
+        <p>
             <button class="btn btn-success" type="submit">Convert Distance</button>
-    </p>
-</form>
+        </p>
+    </form>
 
 </section>
 
