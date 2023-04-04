@@ -15,7 +15,7 @@ namespace ConsoleAppProject.App04
             {
                 "Post Message", "Post Image", "Remove Post", 
                 "Display All Posts", "Display Posts by Author",
-                "Display Posts by Date", "Add Comment", "Like Posts", 
+                "Display Posts by Date", "Add Comment", "Like Posts", "Unlike Posts",
                 "Quit"
             };
 
@@ -33,10 +33,34 @@ namespace ConsoleAppProject.App04
                     case 6: DisplayByDate(); break;
                     case 7: AddComment(); break;
                     case 8: LikePosts(); break;
-                    case 9: wantToQuit = true; break;
+                    case 9: UnlikePosts(); break;
+                    case 10: wantToQuit = true; break;
                 }
             } while (!wantToQuit);
         }
+
+        private void UnlikePosts()
+        {
+            ConsoleHelper.OutputTitle("Unike a Post");
+
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            int postId = (int)ConsoleHelper.InputNumber("Type in the ID of the post you wish to unlike > ");
+
+            Post post = news.FindPost(postId);
+
+            if (post == null)
+            {
+                Console.WriteLine($"Post with ID {postId} not found.");
+            }
+            else
+            {
+                post.Unlike();
+                Console.WriteLine("The post has been liked!");
+                post.Display();
+            }
+        }
+
         private void PostMessage()
         {
             ConsoleHelper.OutputTitle("Post a message");
@@ -116,6 +140,7 @@ namespace ConsoleAppProject.App04
 
 
         }
+
         private void AddComment()
         {
             ConsoleHelper.OutputTitle("Add a comment to a poost");
