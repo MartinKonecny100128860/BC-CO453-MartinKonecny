@@ -6,10 +6,11 @@ using System.Text;
 namespace ConsoleAppProject.App02
 {
     /// <summary>
-    /// Please describe the main features of this App
+    /// This app calculates the bmi of an user. 
     /// </summary>
     /// <author>
-    /// Student Name version 0.1 6'5 14 1
+    /// Student Name Martin Konecny
+    /// version 6.1
     /// </author>
     public class BMI
     {
