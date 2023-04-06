@@ -14,99 +14,98 @@
 
 <html>
 
-<header class="text-center jumbotron justify-content-center">
-    <h1>App01: Distance Converter</h1>
-    <h2>by Martin Konecny</h2>
-    <p>
-        This app will convert a distance entered in one unit into
-        the equalivent distance measured in another unit.
-    </p>
-
-</header>
-
-<section>
-    <form method="post">
-
-        <h2>Convert from:</h2>
-
+    <header class="text-center jumbotron justify-content-center">
+        <h1>App01: Distance Converter</h1>
+        <h2>by Martin Konecny</h2>
         <p>
-            <label>From Unit: </label>
-            <select asp-for="FromUnit" required
-                    asp>
-                <option>@DistanceConverter.MILES</option>
-                <option>@DistanceConverter.METERS</option>
-                <option>@DistanceConverter.FEET</option>
-            </select>
+            This app will convert a distance entered in one unit into
+            the equalivent distance measured in another unit.
         </p>
-        <p>
-            @if (Model.FromDistance == 0)
-            {
-                <input type="text" asp-for="@Model.FromDistance" value=""
-                       placeholder="From Distance" required />
-            }
-            else
-            {
-                <input type="text" asp-for="@Model.FromDistance"
-                       placeholder="From Distance" required />
-            }
-        </p>
-        <h2>Convert to</h2>
 
-        <p>
-            <label>To Unit: </label>
-            <select asp-for="@Model.ToUnit">
-                <option>@DistanceConverter.MILES</option>
-                <option>@DistanceConverter.METERS</option>
-                <option>@DistanceConverter.FEET</option>
-            </select>
-        </p>
-        <p>
-            @if (Model.ToDistance == 0)
-            {
-                <input type="text" asp-for="@Model.ToDistance" value=""
-                       placeholder="From Distance" readonly />
-            }
-            else
-            {
-                <input type="text" asp-for="@Model.ToDistance"
-                   value="@Model.ToDistance.ToString("0.00")"
-                       placeholder="To Distance" readonly />
-            }
-        </p>
-        <p>
-            <button class="btn btn-success" type="submit">Convert Distance</button>
-        </p>
-    </form>
+    </header>
 
-</section>
+    <section>
+        <form method="post">
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+            <h2>Convert from:</h2>
 
-<style>
-    .jumbotron {
-        background-color: #1f1e1e;
-    }
+            <p>
+                <label>From Unit: </label>
+                <select asp-for="FromUnit" required asp>
+                    <option>@DistanceConverter.MILES</option>
+                    <option>@DistanceConverter.METERS</option>
+                    <option>@DistanceConverter.FEET</option>
+                </select>
+            </p>
+            <p>
+                @if (Model.FromDistance == 0)
+                {
+                    <input type="text" asp-for="@Model.FromDistance" value=""
+                        placeholder="From Distance" required />
+                }
+                else
+                {
+                    <input type="text" asp-for="@Model.FromDistance"
+                        placeholder="From Distance" required />
+                }
+            </p>
+            <h2>Convert to</h2>
 
-    body {
-        background-color: #121212;
-        font-family: 'Oswald';
-    }
+            <p>
+                <label>To Unit: </label>
+                <select asp-for="@Model.ToUnit">
+                    <option>@DistanceConverter.MILES</option>
+                    <option>@DistanceConverter.METERS</option>
+                    <option>@DistanceConverter.FEET</option>
+                </select>
+            </p>
+            <p>
+                @if (Model.ToDistance == 0)
+                {
+                    <input type="text" asp-for="@Model.ToDistance" value=""
+                        placeholder="From Distance" readonly />
+                }
+                else
+                {
+                    <input type="text" asp-for="@Model.ToDistance"
+                    value="@Model.ToDistance.ToString("0.00")"
+                        placeholder="To Distance" readonly />
+                }
+            </p>
+            <p>
+                <button class="btn btn-success" type="submit">Convert Distance</button>
+            </p>
+        </form>
 
-    body {
-        color: #61457a
-    }
-</style>
+    </section>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <style>
+        .jumbotron {
+            background-color: #1f1e1e;
+        }
+
+        body {
+            background-color: #121212;
+            font-family: 'Oswald';
+        }
+
+        body {
+            color: #61457a
+        }
+    </style>
 
 </html>
 

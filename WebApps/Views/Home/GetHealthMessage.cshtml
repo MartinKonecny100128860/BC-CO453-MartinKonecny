@@ -3,11 +3,7 @@
 @using Microsoft.AspNetCore.Mvc;
 @using Microsoft.AspNetCore.Mvc.RazorPages;
 
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+
 
 @{
     ViewData["Title"] = "GetHealthMessage";
@@ -18,37 +14,46 @@
     bmi.Index = Model;
 }
 
-<header>
+<html>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    
+    <header>
 
-    <h1>Health Message</h1>
-    <h2>by Martin Konecny</h2>
+        <h1>Health Message</h1>
+        <h2>by Martin Konecny</h2>
 
-</header>
+    </header>
 
+    <body>
+        <section>
+            <h2> Your BMI Index</h2>
+            <p class="text-lead">
+                @bmi.GetHealthMessage()
+            </p>
+            <h2> BAME Message</h2>
+            <p class="text-info">
+                @bmi.GetBameMessage()
+            </p>
+        </section>
+    </body>
 
-<section>
-    <h2> Your BMI Index</h2>
-    <p class="text-lead">
-        @bmi.GetHealthMessage()
-    </p>
-    <h2> BAME Message</h2>
-    <p class="text-info">
-        @bmi.GetBameMessage()
-    </p>
-</section>
+    <style>
+        .jumbotron {
+            background-color: #1f1e1e;
+        }
 
-<style>
-    .jumbotron {
-        background-color: #1f1e1e;
-    }
+        body {
+            background-color: #121212;
+            font-family: 'Oswald';
+        }
 
-    body {
-        background-color: #121212;
-        font-family: 'Oswald';
-    }
+        body {
+            color: #61457a
+        }
+    </style>    
 
-    body {
-        color: #61457a
-    }
-</style>
-
+</html>

@@ -11,76 +11,79 @@
     ViewData["Title"] = "MK BMI Calculator";
 }
 
-<header>
-    <h1> BMI Calculator </h1>
-    <h2> by Martin Konecny </h2>
-    <p>
-        This app will use your body weight and height to calculate
-        a BMI Index which can be used to classify your health risks
-    </p>
-</header>
-
-<section>
-    <form method="post">
-
-        <h2> Height </h2>
+<html>
+    <header>
+        <h1> BMI Calculator </h1>
+        <h2> by Martin Konecny </h2>
         <p>
-            Please input your current height in whole numbers using
-            metric or imperial units
+            This app will use your body weight and height to calculate
+            a BMI Index which can be used to classify your health risks
         </p>
-        <p>
+    </header>
 
-            <input type="number" placeholder="Feet"
-                   value="6" asp-for="@Model.Feet" />
+    <section>
+        <form method="post">
 
-            <input type="number" placeholder="Inches"
-                   value="0" asp-for="@Model.Inches" />
-        </p>
-        <p>
-            <input type="number" placeholder="Centimetres"
-                   asp-for="@Model.Centimetres" />
-        </p>
+            <h2> Height </h2>
+            <p>
+                Please input your current height in whole numbers using
+                metric or imperial units
+            </p>
+            <p>
 
-        <h2> Weight </h2>
-        <p>
-            Please input your current weight in whole numbers using
-            metric or imperial units
-        </p>
-        <p>
+                <input type="number" placeholder="Feet"
+                    value="6" asp-for="@Model.Feet" />
 
-            <input type="number" placeholder="Stones"
-                   value="11" asp-for="@Model.Stones" />
+                <input type="number" placeholder="Inches"
+                    value="0" asp-for="@Model.Inches" />
+            </p>
+            <p>
+                <input type="number" placeholder="Centimetres"
+                    asp-for="@Model.Centimetres" />
+            </p>
 
-            <input type="number" placeholder="Pounds"
-                   value="5" asp-for="@Model.Pounds" />
-        </p>
-        <p>
-            <input type="number" placeholder="Kilograms"
-                   asp-for="@Model.Kilograms" />
-        </p>
+            <h2> Weight </h2>
+            <p>
+                Please input your current weight in whole numbers using
+                metric or imperial units
+            </p>
+            <p>
 
-        <p>
-            <button class="btn-success" type="submit">Calculate</button>
-        </p>
+                <input type="number" placeholder="Stones"
+                    value="11" asp-for="@Model.Stones" />
 
-    </form>
+                <input type="number" placeholder="Pounds"
+                    value="5" asp-for="@Model.Pounds" />
+            </p>
+            <p>
+                <input type="number" placeholder="Kilograms"
+                    asp-for="@Model.Kilograms" />
+            </p>
 
-</section>
-<br />
-<br />
-<br />
+            <p>
+                <button class="btn-success" type="submit">Calculate</button>
+            </p>
 
-<style>
-    .jumbotron {
-        background-color: #1f1e1e;
-    }
+        </form>
 
-    body {
-        background-color: #121212;
-        font-family: 'Oswald';
-    }
+    </section>
+    <br />
+    <br />
+    <br />
 
-    body {
-        color: #61457a
-    }
-</style>
+    <style>
+        .jumbotron {
+            background-color: #1f1e1e;
+        }
+
+        body {
+            background-color: #121212;
+            font-family: 'Oswald';
+        }
+
+        body {
+            color: #61457a
+        }
+    </style>
+
+</html>
