@@ -25,6 +25,7 @@ namespace ConsoleApp.Test
             //Assert
             Assert.AreEqual(expectedMetricBMI, Math.Round(bmi.Index, 2));
         }
+
         /// <summary>
         /// Tets method which chekcs if the calculations for bmi are correct. 
         /// it checks metric unit for highest underweight bmi 
@@ -44,6 +45,7 @@ namespace ConsoleApp.Test
             //Assert
             Assert.AreEqual(expectedMetricBMI, Math.Round(bmi.Index, 2));
         }
+
         /// <summary>
         /// Tets method which chekcs if the calculations for bmi are correct. 
         /// it checks imperial unit for lowest underweight bmi 
@@ -65,6 +67,7 @@ namespace ConsoleApp.Test
             // Assert
             Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.Index, 2));
         }
+
         /// <summary>
         /// Tets method which chekcs if the calculations for bmi are correct. 
         /// it checks imperial unit for highest underweight bmi 
@@ -87,6 +90,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks metric unit for lowest normal range bmi 
+        /// </summary>
         [TestMethod]
         public void TestNormalRangeLowMetricBMI()
         {
@@ -103,6 +110,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedMetricBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks metric unit for highest normal range bmi 
+        /// </summary>
         [TestMethod]
         public void TestNormalRangeHighMetricBMI()
         {
@@ -119,6 +130,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedMetricBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks imperial unit for lowest normal range bmi 
+        /// </summary>
         [TestMethod]
         public void TestNormalRangeLowImperialBMI()
         {
@@ -137,6 +152,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks imperial unit for highest normal range bmi 
+        /// </summary>
         [TestMethod]
         public void TestNormalRangeHighImperialBMI()
         {
@@ -155,6 +174,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks metric unit for lowest overweight bmi 
+        /// </summary>
         [TestMethod]
         public void TestOverweightLowMetricBMI()
         {
@@ -171,6 +194,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedMetricBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks metric unit for highest overweight bmi 
+        /// </summary>
         [TestMethod]
         public void TestOverweightHighMetricBMI()
         {
@@ -187,6 +214,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedMetricBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks imperial unit for lowest overweight bmi 
+        /// </summary>
         [TestMethod]
         public void TestOverweightLowImperialBMI()
         {
@@ -205,6 +236,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks imperial unit for highest overweight bmi 
+        /// </summary>
         [TestMethod]
         public void TestOverweighthHighImperialBMI()
         {
@@ -223,6 +258,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks metric unit for lowest obese 1 bmi 
+        /// </summary>
         [TestMethod]
         public void TestObeseClassILowMetricBMI()
         {
@@ -239,7 +278,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedMetricBMI, Math.Round(bmi.Index, 2));
         }
 
-        //fix
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks metric unit for highest obese 1 bmi 
+        /// </summary>
         [TestMethod]
         public void TestObeseClassIMetricBMI()
         {
@@ -256,6 +298,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedMetricBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks imperial unit for lowest obese 1 bmi 
+        /// </summary>
         [TestMethod]
         public void TestImperialObeseClassILowBMI()
         {
@@ -274,6 +320,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks imperial unit for high obese 1 bmi 
+        /// </summary>
         [TestMethod]
         public void TestImperialObeseClassIHighBMI()
         {
@@ -292,7 +342,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.Index, 2));
         }
 
-
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks metric unit for lowest obese 2 bmi 
+        /// </summary>
         [TestMethod]
         public void TestObeseClassIILowMetricBMI()
         {
@@ -309,6 +362,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedMetricBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks metric unit for highest obese 2 bmi 
+        /// </summary>
         [TestMethod]
         public void TestObeseClassIIHighMetricBMI()
         {
@@ -325,6 +382,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedMetricBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks imperial unit for lowest obese 2 bmi 
+        /// </summary>
         [TestMethod]
         public void TestImperialObeseClassIILowBMI()
         {
@@ -343,6 +404,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks imperial unit for highest obese 2 bmi 
+        /// </summary>
         [TestMethod]
         public void TestImperialObeseClassIIHighBMI()
         {
@@ -361,7 +426,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.Index, 2));
         }
 
-
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks metric unit for lowest obese 3 bmi 
+        /// </summary>
         [TestMethod]
         public void TestObeseClassIIILowMetricBMI()
         {
@@ -378,6 +446,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedMetricBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks metric unit for highest obese 3 bmi 
+        /// </summary>
         [TestMethod]
         public void TestObeseClassIIIHighMetricBMI()
         {
@@ -394,6 +466,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedMetricBMI, Math.Round(bmi.Index, 2));
         }
 
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks imperial unit for lowest obese 3 bmi 
+        /// </summary>
         [TestMethod]
         public void TestImperialObeseClassIIILowBMI()
         {
@@ -411,7 +487,10 @@ namespace ConsoleApp.Test
             // Assert
             Assert.AreEqual(expectedImperialBMI, Math.Round(bmi.Index, 2));
         }
-
+        /// <summary>
+        /// Tets method which checks if the calculations for bmi are correct. 
+        /// it checks imperial unit for highest obese 3 bmi 
+        /// </summary>
         [TestMethod]
         public void TestImperialObeseClassIIIHighBMI()
         {
