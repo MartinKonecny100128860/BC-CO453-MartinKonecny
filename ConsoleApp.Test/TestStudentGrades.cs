@@ -17,6 +17,11 @@ namespace ConsoleApp.Test
         private readonly StudentGrades
         studentGrades = new StudentGrades();
 
+        /// <summary>
+        /// Tests if 0 marks will output grade F
+        /// it uses the assert class to check
+        /// the calculation
+        /// </summary>
         [TestMethod]
         public void TestConvert0ToGradeF()
         {
@@ -30,6 +35,11 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
+        /// <summary>
+        /// Tests if 39 marks will output grade F
+        /// it uses the assert class to check
+        /// the calculation
+        /// </summary>
         [TestMethod]
         public void TestConvert39ToGradeF()
         {
@@ -43,6 +53,11 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
+        /// <summary>
+        /// Tests if 40 marks will output grade D
+        /// it uses the assert class to check
+        /// the calculation
+        /// </summary>
         [TestMethod]
         public void TestConvert40ToGradeD()
         {
@@ -56,6 +71,11 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
+        /// <summary>
+        /// Tests if 49 marks will output grade D
+        /// it uses the assert class to check
+        /// the calculation
+        /// </summary>
         [TestMethod]
         public void TestConvert49ToGradeD()
         {
@@ -69,6 +89,11 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
+        /// <summary>
+        /// Tests if 50 marks will output grade C
+        /// it uses the assert class to check
+        /// the calculation
+        /// </summary>
         [TestMethod]
         public void TestConvert50ToGradeC()
         {
@@ -82,6 +107,11 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
+        /// <summary>
+        /// Tests if 59 marks will output grade C
+        /// it uses the assert class to check
+        /// the calculation
+        /// </summary>
         [TestMethod]
         public void TestConvert59ToGradeC()
         {
@@ -95,6 +125,11 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
+        /// <summary>
+        /// Tests if 69 marks will output grade B
+        /// it uses the assert class to check
+        /// the calculation
+        /// </summary>
         [TestMethod]
         public void TestConvert69ToGradeB()
         {
@@ -108,6 +143,11 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
+        /// <summary>
+        /// Tests if 60 marks will output grade B
+        /// it uses the assert class to check
+        /// the calculation
+        /// </summary>
         [TestMethod]
         public void TestConvert60ToGradeB()
         {
@@ -120,7 +160,11 @@ namespace ConsoleApp.Test
             //assert
             Assert.AreEqual(expectedGrade, actualGrade);
         }
-
+        /// <summary>
+        /// Tests if 70 marks will output grade A
+        /// it uses the assert class to check
+        /// the calculation
+        /// </summary>
         [TestMethod]
         public void TestConvert70ToGradeA()
         {
@@ -134,6 +178,11 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
+        /// <summary>
+        /// Tests if 100 marks will output grade A
+        /// it uses the assert class to check
+        /// the calculation
+        /// </summary>
         [TestMethod]
         public void TestConvert100ToGradeA()
         {
@@ -147,7 +196,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedGrade, actualGrade);
         }
 
-        //ayo
+        /// <summary>
+        /// Checks if converter correctly calculates the
+        /// highest mark among all the students marks.
+        /// </summary>
         [TestMethod]
         public void TestCalculateHighestMark()
         {
@@ -159,6 +211,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedMax, converter.MaxiMarks);
         }
 
+        /// <summary>
+        /// Checks if converter correctly calculates the
+        /// lowest mark among all the students marks.
+        /// </summary>
         [TestMethod]
         public void TestCalculateLowestMark()
         {
@@ -170,6 +226,10 @@ namespace ConsoleApp.Test
             Assert.AreEqual(expectedMin, converter.MiniMarks);
         }
 
+        /// <summary>
+        /// Checks if converter correctly calculates the
+        /// average/mean among all the students marks.
+        /// </summary>
         [TestMethod]
         public void TestCalculateMeanStat()
         {
