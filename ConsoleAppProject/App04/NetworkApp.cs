@@ -4,9 +4,21 @@ using System;
 
 namespace ConsoleAppProject.App04
 {
+    ///<summary>
+    ///
+    /// </summary>
+    /// <author>
+    /// By Martin Konecny
+    /// version 4.2
+    /// </author>
     internal class NetworkApp
     {
         private NewsFeed news = new NewsFeed();
+
+        /// <summary>
+        /// This method displahys a menu of different choices
+        /// the user can select from 
+        /// </summary>
         public void DisplayChoices()
         {
             ConsoleHelper.OutputHeading("Welcome to this Network App");
@@ -39,6 +51,11 @@ namespace ConsoleAppProject.App04
             } while (!wantToQuit);
         }
 
+        /// <summary>
+        /// This method allows the user to unlike a post
+        /// but the user needs to insert an ID of already
+        /// existing post.
+        /// </summary>
         private void UnlikePosts()
         {
             ConsoleHelper.OutputTitle("Unike a Post");
@@ -61,6 +78,12 @@ namespace ConsoleAppProject.App04
             }
         }
 
+        /// <summary>
+        /// This method prompts the user to insert a message,
+        /// it also infroms the user that their message was posted
+        /// once message is posted the user can select from
+        /// other choices
+        /// </summary>
         private void PostMessage()
         {
             ConsoleHelper.OutputTitle("Post a message");
@@ -77,6 +100,13 @@ namespace ConsoleAppProject.App04
             ConsoleHelper.OutputTitle("Your message has been posted:");
             post.Display();
         }
+
+        /// <summary>
+        /// This method prompts the user to post a message with caption,
+        /// as well as the image file name. it also infroms the user that 
+        /// their image was posted. once image is posted the user
+        /// can select from other choices
+        /// </summary>
         private void PostImage()
         {
             ConsoleHelper.OutputTitle("Post an Photo/Image");
@@ -97,6 +127,9 @@ namespace ConsoleAppProject.App04
             post.Display();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private string InputName()
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -106,6 +139,9 @@ namespace ConsoleAppProject.App04
             return author;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void RemovePost()
         {
             ConsoleHelper.OutputTitle($" Removing a post");
@@ -115,6 +151,11 @@ namespace ConsoleAppProject.App04
             int id = (int)ConsoleHelper.InputNumber(" Please enter the ID of the post you want to remove > ");
             news.RemovePost(id);
         }
+       /// <summary>
+       /// This method allows the user to display all 
+       /// the posts which were created on this network 
+       /// application.
+       /// </summary>
         private void DisplayAll()
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -122,6 +163,12 @@ namespace ConsoleAppProject.App04
 
             news.Display();
         }
+        /// <summary>
+        /// This method allows the user to display all 
+        /// the posts which were created on this network 
+        /// application by specific author, but the user
+        /// must input the authors username first.
+        /// </summary>
         private void DisplayByAuthor()
         {
             ConsoleHelper.OutputTitle("Display Posts by Author");
@@ -134,6 +181,9 @@ namespace ConsoleAppProject.App04
             news.FindAuthorPost(author);
         }
 
+        /// <summary>
+        /// to be completed
+        /// </summary>
         private void DisplayByDate()
         {
             ConsoleHelper.OutputTitle("Displaying posts by date");
@@ -141,6 +191,11 @@ namespace ConsoleAppProject.App04
 
         }
 
+       /// <summary>
+       /// This method allows the user of this application
+       /// to create and input a comment to already existing
+       /// post
+       /// </summary>
         private void AddComment()
         {
             ConsoleHelper.OutputTitle("Add a comment to a poost");
@@ -160,6 +215,11 @@ namespace ConsoleAppProject.App04
 
         }
 
+        /// <summary>
+        /// This method allows the user to like a post
+        /// but the user needs to insert an ID of already
+        /// existing post.
+        /// </summary>
         private void LikePosts()
         {
             ConsoleHelper.OutputTitle("Like a Post");

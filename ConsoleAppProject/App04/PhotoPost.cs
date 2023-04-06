@@ -10,6 +10,7 @@ namespace ConsoleAppProject.App04
     ///</summary>
     /// <author>
     /// Michael Kölling and David J. Barnes
+    /// Edited by Martin Konecny
     /// @version 0.1
     /// </author>
     public class PhotoPost : Post
@@ -40,6 +41,10 @@ namespace ConsoleAppProject.App04
             this.Caption = caption;
         }
 
+        /// <summary>
+        /// Display methiod that displays the file name and caption
+        /// for the photo post.
+        /// </summary>
         public override void Display()
         {
             Console.ForegroundColor = ConsoleColor.Green;

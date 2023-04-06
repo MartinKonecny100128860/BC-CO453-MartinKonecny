@@ -16,6 +16,7 @@ namespace ConsoleAppProject.App04
     ///</summary>
     ///<author>
     ///  Michael Kölling and David J. Barnes
+    ///  Edited by Martin Konecny
     ///  version 0.1
     ///</author> 
     public class NewsFeed
@@ -32,7 +33,7 @@ namespace ConsoleAppProject.App04
             MessagePost post = new MessagePost(AUTHOR, "I am getting into programming!");
             AddMessagePost(post);
 
-            PhotoPost photoPost = new PhotoPost(AUTHOR, "Photo1.jpg", "c# tests");
+            PhotoPost photoPost = new PhotoPost(AUTHOR, "Promgrammer.jpg", "c# tests");
             AddPhotoPost(photoPost);
         }
 
@@ -58,7 +59,10 @@ namespace ConsoleAppProject.App04
         }
 
         /// <summary>
-        /// 
+        /// takes ID parameter and removes the post
+        /// assositated with the ID.it then displays 
+        /// a message that post either doesnt exist or
+        /// that the post was deleted. 
         /// </summary>
         public void RemovePost(int id)
         {
@@ -84,7 +88,9 @@ namespace ConsoleAppProject.App04
             }
         }
         /// <summary>
-        /// 
+        /// takes the ID parameter and returns the post
+        /// affiliated with it. returns null if post
+        /// with that id doesnt exist. 
         /// </summary>
 
         public Post FindPost(int id)
@@ -100,6 +106,11 @@ namespace ConsoleAppProject.App04
             return null;
         }
 
+        /// <summary>
+        /// prompts the user to input an ID of a post
+        /// they want to comment under. if the post exists
+        /// it will display the posts 
+        /// </summary>
         public void AddComment(string comment)
         {
             Console.WriteLine(" Input The ID");
@@ -116,9 +127,10 @@ namespace ConsoleAppProject.App04
 
         }
         /// <summary>
-        /// 
+        /// This method takes the author parameter 
+        /// and displays all posts crated by that author
         /// </summary>
-        /// <param name="author"></param>
+        
         public void FindAuthorPost(string author)
         {
             foreach (Post post in posts)
@@ -136,12 +148,12 @@ namespace ConsoleAppProject.App04
         ///</summary>
         public void Display()
         {
-            // display all text posts
+
             foreach (Post posts in posts)
             {
                 posts.Display();
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine();   // empty line between posts
+                Console.WriteLine();
             }
         }
 
