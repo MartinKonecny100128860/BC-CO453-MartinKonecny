@@ -116,7 +116,9 @@ namespace ConsoleAppProject.App03
             } while (!exit);
         }
 
-        // Returns an array of grades for each student based on the marks they achieved.
+        /// <summary>
+        /// Returns an array of grades for each student based on the marks they achieved.
+        /// </summary>
         public char[] Grade
         {
             get
