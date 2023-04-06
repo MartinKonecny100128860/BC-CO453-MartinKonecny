@@ -13,8 +13,10 @@ using ConsoleAppProject.App01;
 namespace ConsoleAppProject.App03
 {
     /// <summary>
-    /// At the moment this class just tests the
-    /// Grades enumeration names and descriptions
+    /// This is the main student grades class where student marks 
+    /// can be entered, displayed calculated/converted to grade,
+    /// statiscts are calculated here as well as the students grade
+    /// profile.
     /// </summary>
     public class StudentGrades
     {
@@ -29,7 +31,6 @@ namespace ConsoleAppProject.App03
         public const int HighestMark = 100;
 
         //properties
-
 
         public string[] Students { get; set; }
         public int[] MarksOfStudents { get; set; }
@@ -64,13 +65,18 @@ namespace ConsoleAppProject.App03
 
         }
 
-        // display menu of different options
+        /// <summary>
+        /// Displays meain menu of this program, it displays
+        /// 6 different options the user can select from.
+        /// </summary>
         public void OutputMenu()
         {
             bool exit = false;
             do
             {
+                // console helper for the heading
                 ConsoleHelper.OutputHeading(" App03: Student Marks ");
+                //changes the colour of the text for readability
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
 
                 Console.WriteLine(" \n Enter a number to select an option \n");
@@ -108,8 +114,9 @@ namespace ConsoleAppProject.App03
 
                 }
             } while (!exit);
-        } 
+        }
 
+        // Returns an array of grades for each student based on the marks they achieved.
         public char[] Grade
         {
             get
@@ -130,6 +137,10 @@ namespace ConsoleAppProject.App03
             }
         }
 
+        /// <summary>
+        /// This methods takes the user inputs and returns their
+        /// corresponding grade as a character
+        /// </summary>
         private char StudentGrade(int mark)
         {
             if (mark >= 80)
@@ -156,8 +167,9 @@ namespace ConsoleAppProject.App03
 
 
         /// <summary>
-        /// Input a mark between 0-100 for one and every student and store
-        /// it in the marks array 
+        /// This method prompts the user to input marks between 0-100 for each student in
+        /// the Students array. if the user inputs a number higher than 100 an error message 
+        /// will appear. The marks are then stored in the MarksOfStudents array.
         /// </summary>
         public void InputMarks()
         {
@@ -178,8 +190,8 @@ namespace ConsoleAppProject.App03
             }
         }
         /// <summary>
-        /// Lists each student and displays their names
-        /// and current grades / marks
+        /// This method lists all of the student's names and the
+        /// mark they have achieved out of 100
         /// </summary>
         public void OutputMarks()
         {
@@ -193,12 +205,8 @@ namespace ConsoleAppProject.App03
         }
 
         /// <summary>
-        /// List all the students and display 
-        /// their name and current Grade
-        /// </summary>
-        /// <summary>
-        /// List all the students and display 
-        /// their name and current Grade
+        /// This method lists all of the student's names and the
+        /// Grade they have achieved A,B,C,D or F
         /// </summary>
         public void OutputGrades()
         {
@@ -213,10 +221,12 @@ namespace ConsoleAppProject.App03
         }
 
         /// <summary>
-        /// Output Stats - Mean. Max, Min
+        /// This method outputs the statistics for all the students 
+        /// (Mean. Highest Mark and Lowest Mark)
         /// </summary>
         public void OutputStats()
         {
+            //This is where the calculations for the statistics happen
             CalculateStats();
 
             ConsoleHelper.OutputHeading("Student Marks Statistics");
@@ -229,9 +239,8 @@ namespace ConsoleAppProject.App03
         }
 
         /// <summary>
-        /// 
-        ///Convert a student mark to a grade 
-        ///from F fail to A first class
+        /// This method takes the students mark which was inputed 
+        /// and returns it as a grade (A, B, C, D or F)
         /// </summary>
         public Grades ConvertToGrade(int mark)
         {
@@ -257,8 +266,7 @@ namespace ConsoleAppProject.App03
             }
         }
         /// <summary>
-        /// Calculate and display the minimum, maximum
-        /// and mean mark for each student
+        /// This method calculates the mean, lowest mark and highest mark
         /// </summary>
 
         public void CalculateStats()
@@ -277,7 +285,11 @@ namespace ConsoleAppProject.App03
             MeanStudentMarks = total / MarksOfStudents.Length;
         }
 
-
+        /// <summary>
+        /// This method calculates the amount of students in 
+        /// every grade category and stores the number in
+        /// GradeProfile Array
+        /// </summary>
         public void CalculateGradeProfile()
         {
             for (int index = 0; index < GradeProfile.Length; index++)
@@ -292,7 +304,11 @@ namespace ConsoleAppProject.App03
         }
 
         /// <summary>
-        /// 
+        /// This method outputs the grade profile which lists
+        /// the percentage of students in each grade category.
+        /// It also calls the CalculateGradeProfile() method
+        /// so it can calculate the counts for every category
+        /// within this method. 
         /// </summary>
         public void OutputGradeProfile()
         {
@@ -311,13 +327,7 @@ namespace ConsoleAppProject.App03
             OutputMenu();
         }
 
-        public Grades Grades1
-        {
-            get => default;
-            set
-            {
-            }
-        }
+
     }
 
 }
