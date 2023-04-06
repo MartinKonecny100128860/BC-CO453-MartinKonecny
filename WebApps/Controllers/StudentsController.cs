@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebApps.Data;
 using WebApps.Models;
-using ConsoleAppProject.App03;
+
 
 namespace WebApps.Controllers
 {
