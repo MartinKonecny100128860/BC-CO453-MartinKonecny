@@ -6,6 +6,9 @@ namespace ConsoleApp.Test
     [TestClass]
     public class TestDistanceConverter
     {
+        /// <summary>
+        /// tests if 1 feet is correctly calculated to miles
+        /// </summary>
         [TestMethod]
         public void TestFeetToMiles()
         {
@@ -27,6 +30,10 @@ namespace ConsoleApp.Test
 
 
         }
+
+        /// <summary>
+        /// tests if 1 feet is correctly calculated to meters
+        /// </summary>
         [TestMethod]
         public void TestFeetToMeters()
         {
@@ -48,6 +55,10 @@ namespace ConsoleApp.Test
 
 
         }
+
+        /// <summary>
+        /// tests if 1 mile is correctly calculated to feet
+        /// </summary>
         [TestMethod]
         public void TestMilesToFeet()
         {
@@ -69,6 +80,10 @@ namespace ConsoleApp.Test
 
 
         }
+
+        /// <summary>
+        /// tests if 1 mile is correctly calculated to meters
+        /// </summary>
         [TestMethod]
         public void TestMilesToMeters()
         {
@@ -90,6 +105,10 @@ namespace ConsoleApp.Test
 
 
         }
+
+        /// <summary>
+        /// tests if 1 meter is correctly calculated to feet
+        /// </summary>
         [TestMethod]
         public void TestMetersToFeet()
         {
@@ -111,6 +130,10 @@ namespace ConsoleApp.Test
 
 
         }
+
+        /// <summary>
+        /// tests if 1 meter is correctly calculated to miles
+        /// </summary>
         [TestMethod]
         public void TestMetersToMiles()
         {
