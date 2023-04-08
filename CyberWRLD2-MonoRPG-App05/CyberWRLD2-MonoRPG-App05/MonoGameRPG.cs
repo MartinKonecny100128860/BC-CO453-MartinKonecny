@@ -13,8 +13,8 @@ namespace MonoGameRPG
         private SpriteBatch spriteBatch;
 
         private Texture2D playerImage;
-        private Texture2D walkLeftImages;
-        private Texture2D walkRightImages;
+        private Texture2D walkingLeftImages;
+        private Texture2D walkingRightImages;
 
         private Texture2D backgroundImage;
 
@@ -41,8 +41,8 @@ namespace MonoGameRPG
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             playerImage = Content.Load<Texture2D>("Player/player");
-            walkLeftImages = Content.Load<Texture2D>("Player/walkLeft");
-            walkRightImages = Content.Load<Texture2D>("Player/walkLeft");
+            walkingLeftImages = Content.Load<Texture2D>("Player/walkingLeft");
+            walkingRightImages = Content.Load<Texture2D>("Player/walkingRight");
 
             backgroundImage = Content.Load<Texture2D>("background");
 
