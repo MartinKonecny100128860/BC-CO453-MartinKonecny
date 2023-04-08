@@ -2,16 +2,25 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace CyberWRLD2_MonoRPG_App05
+namespace MonoGameRPG
 {
-    public class Game1 : Game
+    public class RPG_Game : Game
     {
-        private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+        public const int HD_Height = 720;
+        public const int HD_Width = 1280;
 
-        public Game1()
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
+
+        private Texture2D playerImage;
+        private Texture2D walkLeftImages;
+        private Texture2D walkRightImages;
+
+        private Texture2D backgroundImage;
+
+        public RPG_Game()
         {
-            _graphics = new GraphicsDeviceManager(this);
+            graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -20,12 +29,22 @@ namespace CyberWRLD2_MonoRPG_App05
         {
             // TODO: Add your initialization logic here
 
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
+            graphics.ApplyChanges();
+
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            playerImage = Content.Load<Texture2D>("Player/player");
+            walkLeftImages = Content.Load<Texture2D>("Player/walkLeft");
+            walkRightImages = Content.Load<Texture2D>("Player/walkLeft");
+
+            backgroundImage = Content.Load<Texture2D>("background");
 
             // TODO: use this.Content to load your game content here
         }

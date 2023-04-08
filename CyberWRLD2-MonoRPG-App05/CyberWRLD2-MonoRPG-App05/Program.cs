@@ -1,3 +1,14 @@
-﻿
-using var game = new CyberWRLD2_MonoRPG_App05.Game1();
-game.Run();
+﻿using System;
+
+namespace MonoGameRPG
+{
+    public static class Program
+    {
+        [STAThread]
+        static void Main()
+        {
+            using (var game = new RPG_Game())
+                game.Run();
+        }
+    }
+}
