@@ -18,6 +18,8 @@ namespace MonoGameRPG
 
         private Texture2D backgroundImage;
 
+        private PlayerSprite player;
+
         public RPG_Game()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -46,13 +48,24 @@ namespace MonoGameRPG
 
             backgroundImage = Content.Load<Texture2D>("background");
 
+            SetupSprites();
+
             // TODO: use this.Content to load your game content here
+        }
+
+        private void SetupSprites()
+        {
+            player = new PlayerSprite(200, 300);
+            player.Image = playerImage;
         }
 
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+
+            player.Update(gameTime);
+            base.Update(gameTime);
 
             // TODO: Add your update logic here
 
@@ -66,10 +79,11 @@ namespace MonoGameRPG
 
             spriteBatch.Begin();
 
-            Vector2 position = new Vector2();
+            Vector2 position = new Vector2(0, 0);
 
             spriteBatch.Draw(
                 backgroundImage, position, Color.White);
+            spriteBatch.Draw(player.Image, player.Position, Color.White);
 
             spriteBatch.End();
 
