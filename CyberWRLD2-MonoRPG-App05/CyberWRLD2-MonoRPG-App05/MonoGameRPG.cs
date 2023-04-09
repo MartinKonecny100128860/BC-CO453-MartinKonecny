@@ -61,9 +61,17 @@ namespace MonoGameRPG
 
         protected override void Draw(GameTime gameTime)
         {
+            // TODO: Add your drawing code here
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            Vector2 position = new Vector2();
+
+            spriteBatch.Draw(
+                backgroundImage, position, Color.White);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
