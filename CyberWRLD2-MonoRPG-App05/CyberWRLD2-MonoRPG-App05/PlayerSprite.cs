@@ -28,13 +28,13 @@ namespace MonoGameRPG
 
             if (keyState.IsKeyDown(Keys.Left))
             {
-                newY = Position.Y + Speed * deltaTime;
-                Position = new Vector2(Position.X, newY);
+                newX = Position.X - Speed * deltaTime;
+                Position = new Vector2(newX, Position.Y);
             }
 
             if (keyState.IsKeyDown(Keys.Up))
             {
-                newY = Position.Y + Speed * deltaTime;
+                newY = Position.Y - Speed * deltaTime;
                 Position = new Vector2(Position.X, newY);
             }
 
