@@ -60,8 +60,6 @@ namespace WebApps.Controllers
         }
 
 
-
-        [HttpGet]
         public IActionResult StudentMarks()
         {
             return View();
