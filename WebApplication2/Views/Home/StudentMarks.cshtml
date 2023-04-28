@@ -1,0 +1,24 @@
+﻿@model ConsoleAppProject.App03.StudentGrades;
+@using ConsoleAppProject.App03;
+@{
+    ViewData["Title"] = "Marius Boncica Distance Student Marks";
+}
+<header>
+    <h1 class="tophead">
+        Student Grades
+    </h1>
+</header>
+<form  method="post">
+    <h2 class="inputbox">Input Marks</h2>
+    <p>
+        <label class="backpanel" >See Number of students</label>
+        <select asp-for="@Model.Students">
+            <option>@StudentGrades.TotalStudents</option>
+   </select>
+    </p>
+   
+    <p>
+        <button class="btn" type="submit">See Grades</button>
+    </p>
+</form>
+

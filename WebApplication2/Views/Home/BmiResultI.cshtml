@@ -1,0 +1,28 @@
+﻿@model ConsoleAppProject.App02.BMI;
+@{
+    ViewData["Title"] = "BmiResultI";
+}
+
+<div class="jumbotron" style="background-color:@ViewBag.BMIColour; color: white">
+    <h3 class="display-4 text-center">BMI Score</h3>
+    <h1 class="display-4 text-center">@ViewBag.BMIResult</h1>
+    <p class="lead d-flex justify-content-center">@ViewBag.BMIDescription</p>
+    <hr class="my-4 text-center">
+    <p style="margin-left:10%; margin-right:10%">
+        Your BMI, or Body Mass Index, is a measure of your weight compared to your height. Accurate assessments of obesity are important,
+        as being overweight or obese significantly increases your risk of a variety of medical conditions including type 2 diabetes, heart disease and cancer.
+
+        For most adults, BMI gives a good estimate of your weight-related health risks. If your BMI is over 35, your weight is definitely
+        putting your health at risk, regardless of the factors below. However, there are some situations where BMI may underestimate or
+        overestimate these risks in the 25-35 BMI range. The main ones are:
+        <ul style="margin-left:10%; margin-right:10%">
+            <li>Children</li>
+            <li>Pregnant women.</li>
+            <li>Muscle Builders</li>
+            <li>BAME: Black, Asian and other minority ethnic groups.</li>
+        </ul>
+    </p>
+    <p class="lead d-flex justify-content-center">
+        <a class="btn btn-lg" asp-action="BmiCalculator" role="button" style="margin-top: 20px;background-color:rgba(0,0,0,0.2);outline:none;color:white">Go Back</a>
+    </p>
+</div>
