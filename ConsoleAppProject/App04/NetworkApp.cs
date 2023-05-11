@@ -31,7 +31,6 @@ namespace ConsoleAppProject.App04
                 "Quit"
             };
 
-            bool wantToQuit = false;
             do
             {
                 int choice = ConsoleHelper.SelectChoice(choices);
@@ -46,9 +45,9 @@ namespace ConsoleAppProject.App04
                     case 7: AddComment(); break;
                     case 8: LikePosts(); break;
                     case 9: UnlikePosts(); break;
-                    case 10: wantToQuit = true; break;
+                    case 10: Program.Main(); break;
                 }
-            } while (!wantToQuit);
+            }
         }
 
         /// <summary>
