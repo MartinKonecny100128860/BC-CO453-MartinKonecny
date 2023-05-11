@@ -1,4 +1,5 @@
 ﻿using ConsoleAppProject.App01;
+using ConsoleAppProject.Helpers;
 using System;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -81,6 +82,8 @@ namespace ConsoleAppProject.App01
             CalculateDistance();
 
             OutputDistance();
+
+            OutputMenu();
 
         }
 
@@ -201,6 +204,34 @@ namespace ConsoleAppProject.App01
             Console.WriteLine($"\n {FromDistance}  {FromUnit}" +
                 $" is {ToDistance} {ToUnit}!\n");
         }
+        public void OutputMenu()
+        {
+            bool exit = false;
+            do
+            {
+                // console helper for the heading
+                ConsoleHelper.OutputHeading(" App01: Distance Converter ");
+                //changes the colour of the text for readability
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine(" 1. Convert Again");
+                Console.WriteLine(" 2. Exit");
+
+                string input = Console.ReadLine();
+                switch (input)
+                {
+                    case "1":
+                        ConvertDistance();
+                        break;
+                    case "2":
+                        Program.Main();
+                        break;
+                    default:
+                        Console.WriteLine(" This input is inavlid! Please try again.");
+                        break;
+
+                }
+            } while (!exit);
+        }
         /// <summary>
         /// This method will check if the users choice is valid, if it isnt
         /// an error message will be displayed and will return false
@@ -229,5 +260,7 @@ namespace ConsoleAppProject.App01
             Console.WriteLine("                 By Martin Konecny                  ");
             Console.WriteLine(" -------------------------------------------------\n");
         }
+
     }
+
 }
