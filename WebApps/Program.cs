@@ -4,6 +4,9 @@ using Microsoft.Extensions.Logging;
 using System;
 using Microsoft.Extensions.DependencyInjection;
 using WebApps.Data;
+using System.Data;
+using System.Data.SqlClient;
+
 
 namespace WebApps
 {
