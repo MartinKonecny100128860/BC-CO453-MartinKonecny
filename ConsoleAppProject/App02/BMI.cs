@@ -80,6 +80,8 @@ namespace ConsoleAppProject.App02
 
             Console.WriteLine(GetHealthMessage());
             Console.WriteLine(GetBameMessage());
+
+            OutputMenu();
         }
 
         /// <summary>
@@ -213,6 +215,35 @@ namespace ConsoleAppProject.App02
             message.Append("\n Adults 23.0 or more are at increased risk!");
 
             return message.ToString();
+        }
+
+        public void OutputMenu()
+        {
+            bool exit = false;
+            do
+            {
+                // console helper for the heading
+                ConsoleHelper.OutputHeading(" App01: Distance Converter ");
+                //changes the colour of the text for readability
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine(" 1. Convert Again");
+                Console.WriteLine(" 2. Exit");
+
+                string input = Console.ReadLine();
+                switch (input)
+                {
+                    case "1":
+                        CalculateIndex();
+                        break;
+                    case "2":
+                        Program.Main();
+                        break;
+                    default:
+                        Console.WriteLine(" This input is inavlid! Please try again.");
+                        break;
+
+                }
+            } while (!exit);
         }
 
         public UnitSystems UnitSystems1
