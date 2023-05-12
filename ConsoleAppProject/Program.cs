@@ -2,6 +2,7 @@
 using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
 using ConsoleAppProject.App04;
+using ConsoleAppProject.App06;
 using ConsoleAppProject.Helpers;
 using System;
 
@@ -21,6 +22,7 @@ namespace ConsoleAppProject
         private static BMI BmiCalculator = new BMI();
         private static StudentGrades Grades = new StudentGrades();
         private static NetworkApp Media = new NetworkApp();
+        private static RPS RPS = new RPS();
 
         public static BMI BMI
         {
@@ -58,7 +60,7 @@ namespace ConsoleAppProject
             Console.Beep();
 
             string[] myChoices = { "Distance Converter", "BMI Calculator",
-                                 "Student Marks", "Social Network",};
+                                 "Student Marks", "Social Network", "RPS Game",};
 
             int option = ConsoleHelper.SelectChoice(myChoices);
 
@@ -77,6 +79,11 @@ namespace ConsoleAppProject
             else if (option == 4)
             {
                 Media.DisplayChoices();
+            }
+
+            else if (option == 5)
+            {
+                RPS.Main(); 
             }
 
         }
