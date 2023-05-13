@@ -9,6 +9,7 @@ namespace ConsoleAppProject.App06
         {
             do
             {
+
                 Random random = new Random();
                 int yourScore = 0;
                 int npcScore = 0;
