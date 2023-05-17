@@ -121,7 +121,7 @@ namespace ConsoleAppProject.App04
         /// (Currently: Print to the text terminal. This is simulating display 
         /// in a web browser for now.)
         ///</summary>
-        public new virtual void Display()
+        public  virtual void Display()
         {
             Console.ForegroundColor= ConsoleColor.DarkRed;
             Console.WriteLine($"    ID Posts:     {IdPost}");
