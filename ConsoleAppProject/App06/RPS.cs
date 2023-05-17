@@ -4,6 +4,7 @@ using ConsoleAppProject.Helpers;
 namespace ConsoleAppProject.App06
 {
     /// <summary>
+    /// 
     /// This app will ask the user to enter ther number of miles (fromUnit) and convert it to feet or
     /// meters (toUnit) and it will also ask the user for the number of feet and convert it into miles.
 
