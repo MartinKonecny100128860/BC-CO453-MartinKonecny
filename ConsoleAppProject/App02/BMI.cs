@@ -198,8 +198,6 @@ namespace ConsoleAppProject.App02
                             $" You are obese class III! ");
             }
 
-
-
             return message.ToString();
 
         }

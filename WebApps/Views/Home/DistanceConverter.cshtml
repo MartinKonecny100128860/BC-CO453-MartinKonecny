@@ -30,23 +30,21 @@
             <h2>Convert from:</h2>
 
             <p>
-                <label>From Unit: </label>
-                <select asp-for="FromUnit" required asp>
-                    <option>@DistanceConverter.MILES</option>
-                    <option>@DistanceConverter.METERS</option>
-                    <option>@DistanceConverter.FEET</option>
-                </select>
+            <select asp-for="FromUnit" required>
+                <option value="@DistanceConverter.MILES">@DistanceConverter.MILES</option>
+                <option value="@DistanceConverter.METERS">@DistanceConverter.METERS</option>
+                <option value="@DistanceConverter.FEET">@DistanceConverter.FEET</option>
+            </select>
             </p>
             <p>
                 @if (Model.FromDistance == 0)
                 {
-                    <input type="text" asp-for="@Model.FromDistance" value=""
-                        placeholder="From Distance" required />
+                    <input type="text" asp-for="FromDistance" placeholder="From Distance" required />
                 }
                 else
                 {
-                    <input type="text" asp-for="@Model.FromDistance"
-                        placeholder="From Distance" required />
+
+                  <input type="text" asp-for="ToDistance" placeholder="To Distance" readonly />
                 }
             </p>
             <h2>Convert to</h2>
@@ -73,7 +71,7 @@
                 }
             </p>
             <p>
-                <button class="btn btn-success" type="submit">Convert Distance</button>
+                <button class="btn btn-primary" type="submit">Convert Distance</button>
             </p>
         </form>
 
