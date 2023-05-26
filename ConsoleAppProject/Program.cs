@@ -48,6 +48,14 @@ namespace ConsoleAppProject
             }
         }
 
+        internal static RPS RPS1
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static void Main()
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
