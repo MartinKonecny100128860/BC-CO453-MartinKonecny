@@ -11,7 +11,7 @@ namespace WebApps.Models
         public string Name { get; set; }
 
         [Range(0, 100)]
-        public int Mark { get; set; }
+        public int Mark { get; set; } 
     }
 }
 
