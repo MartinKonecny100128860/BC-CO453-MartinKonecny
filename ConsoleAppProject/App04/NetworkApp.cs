@@ -27,7 +27,7 @@ namespace ConsoleAppProject.App04
             {
                 "Post Message", "Post Image", "Remove Post", 
                 "Display All Posts", "Display Posts by Author",
-                "Display Posts by Date", "Add Comment", "Like Posts", "Unlike Posts",
+                "Add Comment", "Like Posts", "Unlike Posts",
                 "Quit"
             };
 
@@ -42,11 +42,10 @@ namespace ConsoleAppProject.App04
                     case 3: RemovePost(); break;
                     case 4: DisplayAll(); break;
                     case 5: DisplayByAuthor(); break;
-                    case 6: DisplayByDate(); break;
-                    case 7: AddComment(); break;
-                    case 8: LikePosts(); break;
-                    case 9: UnlikePosts(); break;
-                    case 10: Program.Main(); break;
+                    case 6: AddComment(); break;
+                    case 7: LikePosts(); break;
+                    case 8: UnlikePosts(); break;
+                    case 9: Program.Main(); break;
                 }
             } while (!wantToQuit);
         }
@@ -179,16 +178,6 @@ namespace ConsoleAppProject.App04
             string author = Console.ReadLine();
 
             news.FindAuthorPost(author);
-        }
-
-        /// <summary>
-        /// to be completed
-        /// </summary>
-        private void DisplayByDate()
-        {
-            ConsoleHelper.OutputTitle("Displaying posts by date");
-
-
         }
 
        /// <summary>
