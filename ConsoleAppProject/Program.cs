@@ -11,10 +11,12 @@ namespace ConsoleAppProject
     /// <summary>
     /// The main method in this class is called first
     /// when the application is started.  It will be used
-    /// to start App01 to App05 for CO453 CW1
+    /// to start App01 to App06 for CO453 CW1 
     /// 
     /// This Project has been modified by:
     /// Martin Konecny 03/02/2023
+    /// Start Date: 03/02/2023
+    /// Finish Date: 29/05/2023
     /// </summary>
     public static class Program
     {
