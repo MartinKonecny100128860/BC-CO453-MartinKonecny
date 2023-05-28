@@ -16,7 +16,7 @@ namespace ConsoleAppProject
     /// This Project has been modified by:
     /// Martin Konecny 03/02/2023
     /// Start Date: 03/02/2023
-    /// Finish Date: 29/05/2023
+    /// Finish Date: 29/05/2023 
     /// </summary>
     public static class Program
     {

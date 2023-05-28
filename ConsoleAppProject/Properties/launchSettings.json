@@ -3,7 +3,7 @@
     "ConsoleAppProject": {
       "commandName": "Project",
       "launchBrowser": true,
-      "environmentVariables": {
+      "environmentVariables": { 
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "https://localhost:64008;http://localhost:64010"

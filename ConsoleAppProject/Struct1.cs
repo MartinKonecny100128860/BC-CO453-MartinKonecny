@@ -7,4 +7,4 @@ namespace ConsoleAppProject
     public struct Struct1
     {
     }
-} 
+}  

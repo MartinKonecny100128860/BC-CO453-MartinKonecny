@@ -7,4 +7,4 @@ namespace ConsoleAppProject
     public interface Interface1
     {
     }
-}  
+}   

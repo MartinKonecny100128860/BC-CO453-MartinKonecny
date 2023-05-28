@@ -8,7 +8,7 @@ namespace ConsoleAppProject.Helpers
     /// that can be used by other console based classes.
     /// Methods to input numbers from the user, and ask the
     /// user to select a choice from a list of choices.
-    /// There are methods for outputting a main heading
+    /// There are methods for outputting a main heading 
     /// and a title.
     /// <author>
     /// Derek Peacock 2021
