@@ -10,7 +10,7 @@ namespace ConsoleAppProject.App04
     /// <author>
     /// By Martin Konecny
     /// version 4.2
-    /// </author>
+    /// </author> 
     internal class NetworkApp
     {
         private NewsFeed news = new NewsFeed();
