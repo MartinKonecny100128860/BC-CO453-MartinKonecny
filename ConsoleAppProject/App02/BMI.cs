@@ -8,6 +8,7 @@ namespace ConsoleAppProject.App02
     /// <summary>
     /// This app calculates the bmi of an user. 
     /// </summary>
+    /// 
     /// <author>
     /// Student Name Martin Konecny
     /// version 6.1
