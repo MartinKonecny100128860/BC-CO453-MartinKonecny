@@ -16,7 +16,7 @@ namespace ConsoleAppProject.App03
     /// This is the main student grades class where student marks 
     /// can be entered, displayed calculated/converted to grade,
     /// statiscts are calculated here as well as the students grade
-    /// profile.
+    /// profile. 
     /// </summary>
     public class StudentGrades
     {
