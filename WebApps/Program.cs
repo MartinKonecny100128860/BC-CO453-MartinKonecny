@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace WebApps
 {
-    public class Program
+    public class Program 
     {
         public static void Main(string[] args)
         {
