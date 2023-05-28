@@ -7,7 +7,7 @@ namespace ConsoleApp.Test
     public class TestDistanceConverter
     {
         /// <summary>
-        /// tests if 1 feet is correctly calculated to miles
+        /// tests if 1 feet is correctly calculated to miles 
         /// </summary>
         [TestMethod]
         public void TestFeetToMiles()

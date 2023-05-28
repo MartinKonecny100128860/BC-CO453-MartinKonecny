@@ -19,7 +19,7 @@ namespace ConsoleApp.Test
 
         /// <summary>
         /// Tests if 0 marks will output grade F
-        /// it uses the assert class to check
+        /// it uses the assert class to check 
         /// the calculation
         /// </summary>
         [TestMethod]

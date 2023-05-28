@@ -8,7 +8,7 @@ namespace ConsoleApp.Test
     {
         /// <summary>
         /// Tets method which chekcs if the calculations for bmi are correct. 
-        /// it checks metric unit for lowest underweight bmi 
+        /// it checks metric unit for lowest underweight bmi  
         /// </summary>
         [TestMethod]
         public void TestUnderweightLowMetricBMI()
