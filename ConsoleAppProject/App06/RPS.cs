@@ -21,7 +21,7 @@ namespace ConsoleAppProject.App06
             // A loop which will keep the game running until the player decides to quit.
             do
             {
-                // object to generate random number
+                // object to generate random number 
                 Random random = new Random();
                 int yourScore = 0;
                 int npcScore = 0;
